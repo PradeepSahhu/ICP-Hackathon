@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "Yogdaan_backend": {
+      "main": "src/Yogdaan_backend/main.mo",
+      "type": "motoko"
+    },
+    "Yogdaan_frontend": {
+      "dependencies": [
+        "Yogdaan_backend"
+      ],
+      "source": [
+        "src/Yogdaan_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "Yogdaan_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
