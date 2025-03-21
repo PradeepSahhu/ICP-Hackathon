@@ -4,6 +4,7 @@
       "main": "src/Yogdaan_backend/main.mo",
       "type": "motoko"
     },
+   
     "Yogdaan_frontend": {
       "dependencies": [
         "Yogdaan_backend"
