@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import { Card, CardContent } from "../components/ui/card";
 import { Yogdaan_backend } from "../../../declarations/Yogdaan_backend";
@@ -13,6 +13,8 @@ import {
 
 const NgoRankingsPage = () => {
   const [hoveredNgo, setHoveredNgo] = useState(null);
+
+  const [topNgo, setTopNgo] = useState(null);
 
   // Sample data for top NGOs
   const topNgos = [
@@ -93,6 +95,22 @@ const NgoRankingsPage = () => {
     },
   ];
 
+  const getTheNGORankings = async () => {
+    const data = await Yogdaan_backend.getTopNGOs(10);
+    setTopNgo(data[0]);
+
+    // console.table([data]);
+
+    console.log(topNgo);
+  };
+
+  useEffect(() => {
+    const callingFunction = async () => {
+      await getTheNGORankings();
+    };
+    callingFunction();
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header with navigation - would be reused across pages */}
@@ -132,49 +150,95 @@ const NgoRankingsPage = () => {
           <h2 className="text-3xl font-bold mb-10 text-center">Top NGOs</h2>
 
           <div className="flex justify-center space-x-12 mb-16">
-            {topNgos.map((ngo) => (
-              <div
-                key={ngo.id}
-                className="flex flex-col items-center"
-                onMouseEnter={() => setHoveredNgo(ngo.id)}
-                onMouseLeave={() => setHoveredNgo(null)}
-              >
-                <div className="relative">
-                  <Avatar className="h-24 w-24 border-2 border-white">
-                    <AvatarImage src={ngo.image} alt={ngo.name} />
-                    <AvatarFallback className="bg-gray-700 text-2xl">
-                      {ngo.name[0]}
-                    </AvatarFallback>
-                  </Avatar>
+            {topNgo &&
+              topNgos.map((ngo) => (
+                <div
+                  key={parseInt(Number(ngo.id))}
+                  className="flex flex-col items-center"
+                  // onMouseEnter={() => setHoveredNgo(ngo.id)}
+                  // onMouseLeave={() => setHoveredNgo(null)}
+                >
+                  <div className="relative">
+                    <Avatar className="h-24 w-24 border-2 border-white">
+                      {/* <AvatarImage src={ngo.image} alt={ngo.name} /> */}
+                      <AvatarFallback className="bg-gray-700 text-2xl">
+                        {String.toLocaleString(ngo.name)}
+                      </AvatarFallback>
+                    </Avatar>
 
-                  {/* Rank badge */}
-                  <div className="absolute -bottom-2 -right-2 bg-white text-black rounded-full h-8 w-8 flex items-center justify-center font-bold">
-                    {ngo.rank}
+                    <div className="absolute -bottom-2 -right-2 bg-white text-black rounded-full h-8 w-8 flex items-center justify-center font-bold">
+                      {parseInt(Number(ngo.id))}
+                    </div>
                   </div>
+
+                  <span className="mt-4 font-medium">{ngo.name}</span>
+
+                  {hoveredNgo === ngo.id && (
+                    <div className="absolute mt-32 z-10">
+                      <Card className="bg-gray-900 border-gray-700 w-64">
+                        <CardContent className="p-4">
+                          {/* <img
+                            src={ngo.banner}
+                            alt={`${String.toLocaleString(ngo.name)} banner`}
+                            className="w-full h-20 object-cover mb-2"
+                          /> */}
+                          <h3 className="font-bold">
+                            {String.toLocaleString(ngo.name)}
+                          </h3>
+                          <p className="text-sm text-gray-400">
+                            Rank: #{parseInt(Number(ngo.rank))}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  )}
                 </div>
+              ))}
+            {!topNgo &&
+              topNgos &&
+              topNgos.map((ngo) => (
+                <div
+                  key={ngo.id}
+                  className="flex flex-col items-center"
+                  onMouseEnter={() => setHoveredNgo(ngo.id)}
+                  onMouseLeave={() => setHoveredNgo(null)}
+                >
+                  <div className="relative">
+                    <Avatar className="h-24 w-24 border-2 border-white">
+                      <AvatarImage src={ngo.image} alt={ngo.name} />
+                      <AvatarFallback className="bg-gray-700 text-2xl">
+                        {ngo.name[0]}
+                      </AvatarFallback>
+                    </Avatar>
 
-                <span className="mt-4 font-medium">{ngo.name}</span>
-
-                {/* Hover banner */}
-                {hoveredNgo === ngo.id && (
-                  <div className="absolute mt-32 z-10">
-                    <Card className="bg-gray-900 border-gray-700 w-64">
-                      <CardContent className="p-4">
-                        <img
-                          src={ngo.banner}
-                          alt={`${ngo.name} banner`}
-                          className="w-full h-20 object-cover mb-2"
-                        />
-                        <h3 className="font-bold">{ngo.name}</h3>
-                        <p className="text-sm text-gray-400">
-                          Rank: #{ngo.rank}
-                        </p>
-                      </CardContent>
-                    </Card>
+                    {/* Rank badge */}
+                    <div className="absolute -bottom-2 -right-2 bg-white text-black rounded-full h-8 w-8 flex items-center justify-center font-bold">
+                      {parseInt(Number(ngo.rank))}
+                    </div>
                   </div>
-                )}
-              </div>
-            ))}
+
+                  <span className="mt-4 font-medium">{ngo.name}</span>
+
+                  {/* Hover banner */}
+                  {hoveredNgo === ngo.id && (
+                    <div className="absolute mt-32 z-10">
+                      <Card className="bg-gray-900 border-gray-700 w-64">
+                        <CardContent className="p-4">
+                          <img
+                            src={ngo.banner}
+                            alt={`${ngo.name} banner`}
+                            className="w-full h-20 object-cover mb-2"
+                          />
+                          <h3 className="font-bold">{ngo.name}</h3>
+                          <p className="text-sm text-gray-400">
+                            Rank: #{ngo.rank}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  )}
+                </div>
+              ))}
           </div>
         </div>
       </section>
@@ -198,53 +262,65 @@ const NgoRankingsPage = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {allNgos.map((ngo) => (
-                  <TableRow
-                    key={ngo.id}
-                    className="border-gray-800 hover:bg-gray-900 text-white"
-                    onMouseEnter={() => setHoveredNgo(ngo.id + "-table")}
-                    onMouseLeave={() => setHoveredNgo(null)}
-                  >
-                    <TableCell className="font-medium text-white">
-                      {ngo.rank}
-                    </TableCell>
-                    <TableCell className="relative">
-                      <div className="flex items-center">
-                        <Avatar className="h-8 w-8 mr-2">
-                          <AvatarImage src={ngo.image} alt={ngo.name} />
-                          <AvatarFallback className="bg-gray-700">
-                            {ngo.name[0]}
-                          </AvatarFallback>
-                        </Avatar>
-                        {ngo.name}
-                      </div>
-
-                      {/* Hover banner */}
-                      {hoveredNgo === ngo.id + "-table" && (
-                        <div className="absolute left-32 top-0 z-10">
-                          <Card className="bg-gray-900 border-gray-700 w-64 text-white">
-                            <CardContent className="p-4">
-                              <img
-                                src={ngo.banner}
-                                alt={`${ngo.name} banner`}
-                                className="w-full h-20 object-cover mb-2"
-                              />
-                              <h3 className="font-bold">{ngo.name}</h3>
-                              <p className="text-sm text-gray-400">
-                                Rank: #{ngo.rank}
-                              </p>
-                            </CardContent>
-                          </Card>
+                {allNgos &
+                  allNgos.map((ngo) => (
+                    <TableRow
+                      key={parseInt(Number(ngo.id))}
+                      className="border-gray-800 hover:bg-gray-900 text-white"
+                      onMouseEnter={() =>
+                        setHoveredNgo(parseInt(Number(ngo.id)) + "-table")
+                      }
+                      onMouseLeave={() => setHoveredNgo(null)}
+                    >
+                      <TableCell className="font-medium text-white">
+                        {parseInt(Number(ngo.rank))}
+                      </TableCell>
+                      <TableCell className="relative">
+                        <div className="flex items-center">
+                          <Avatar className="h-8 w-8 mr-2">
+                            {/* <AvatarImage src={ngo.image} alt={ngo.name} /> */}
+                            <AvatarFallback className="bg-gray-700">
+                              {String.toLocaleString(ngo.name)}
+                            </AvatarFallback>
+                          </Avatar>
+                          {ngo.name}
                         </div>
-                      )}
-                    </TableCell>
-                    <TableCell>{95 - ngo.rank * 3}%</TableCell>
-                    <TableCell>{98 - ngo.rank * 2}%</TableCell>
-                    <TableCell>
-                      ${(1000000 / ngo.rank).toLocaleString()}
-                    </TableCell>
-                  </TableRow>
-                ))}
+
+                        {/* Hover banner */}
+                        {hoveredNgo === parseInt(Number(ngo.id)) + "-table" && (
+                          <div className="absolute left-32 top-0 z-10">
+                            <Card className="bg-gray-900 border-gray-700 w-64 text-white">
+                              <CardContent className="p-4">
+                                {/* <img
+                                  src={ngo.banner}
+                                  alt={`${ngo.name} banner`}
+                                  className="w-full h-20 object-cover mb-2"
+                                /> */}
+                                <h3 className="font-bold">
+                                  {String.toLocaleString(ngo.name)}
+                                </h3>
+                                <p className="text-sm text-gray-400">
+                                  Rank: #{parseInt(Number(ngo.rank))}
+                                </p>
+                              </CardContent>
+                            </Card>
+                          </div>
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {95 - parseInt(Number(ngo.rank)) * 3}%
+                      </TableCell>
+                      <TableCell>
+                        {98 - parseInt(Number(ngo.rank)) * 2}%
+                      </TableCell>
+                      <TableCell>
+                        $
+                        {(
+                          1000000 / parseInt(Number(ngo.rank))
+                        ).toLocaleString()}
+                      </TableCell>
+                    </TableRow>
+                  ))}
               </TableBody>
             </Table>
           </Card>
