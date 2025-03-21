@@ -12,7 +12,7 @@ import Buffer "mo:base/Buffer";
 import Result "mo:base/Result";
 
 actor YogdaanDonationPlatform {
-  // Types
+
   public type NGO = {
     id : Nat;
     name : Text;
@@ -21,7 +21,7 @@ actor YogdaanDonationPlatform {
     completedProjects : Nat;
     beneficiaries : Nat;
     rank : Nat;
-    transparencyScore : Nat; // 0-100
+    transparencyScore : Nat;
     verified : Bool;
   };
 
@@ -81,7 +81,6 @@ actor YogdaanDonationPlatform {
     #InsufficientFunds;
   };
 
-  // State variables
   private stable var nextNgoId : Nat = 1;
   private stable var nextCampaignId : Nat = 1;
   private stable var nextDonationId : Nat = 1;
@@ -95,30 +94,22 @@ actor YogdaanDonationPlatform {
   private var ngoCampaigns = HashMap.HashMap<Nat, [Nat]>(10, Nat.equal, Int.hash);
   private var userDonations = HashMap.HashMap<Principal, [Nat]>(100, Principal.equal, Principal.hash);
 
-  // Helper functions
   private func isAdmin(caller : Principal) : Bool {
     return Principal.equal(caller, adminPrincipal);
   };
 
   private func isNgoOwner(ngoId : Nat, caller : Principal) : Bool {
-    // In a real implementation, you'd have a way to associate NGOs with owners
-    // For simplicity, only admin can manage NGOs in this example
+
     return isAdmin(caller);
   };
 
   private func calculateNGORank(ngoId : Nat) : Nat {
-    // A simple algorithm to calculate NGO rank based on:
-    // - Number of completed projects
-    // - Number of beneficiaries
-    // - Transparency score
-    // - Total raised funds
 
     switch (ngos.get(ngoId)) {
       case (null) { return 0 };
       case (?ngo) {
         var totalRaised : Nat = 0;
 
-        // Get all campaigns for this NGO and sum up raised amounts
         let ngoCompletedCampaigns = Buffer.Buffer<PastCampaign>(0);
         for ((_, pastCampaign) in pastCampaigns.entries()) {
           if (pastCampaign.ngoId == ngoId) {
@@ -126,23 +117,19 @@ actor YogdaanDonationPlatform {
           };
         };
 
-        // Get active campaigns as well
         for ((_, campaign) in campaigns.entries()) {
           if (campaign.ngoId == ngoId) {
             totalRaised += campaign.raisedAmount;
           };
         };
 
-        // Calculate score based on weighted factors
         let projectScore = ngo.completedProjects * 10;
-        let beneficiaryScore = ngo.beneficiaries / 1000; // Normalize by 1000
+        let beneficiaryScore = ngo.beneficiaries / 1000;
         let transparencyScore = ngo.transparencyScore * 5;
-        let fundScore = totalRaised / 10000; // Normalize by 10,000
+        let fundScore = totalRaised / 10000;
 
         let totalScore = projectScore + beneficiaryScore + transparencyScore + fundScore;
 
-        // Convert score to rank (lower score = higher rank number)
-        // This is a simplified algorithm
         if (totalScore > 1000) { return 1 } else if (totalScore > 800) {
           return 2;
         } else if (totalScore > 600) { return 3 } else if (totalScore > 400) {
@@ -152,7 +139,6 @@ actor YogdaanDonationPlatform {
     };
   };
 
-  // Admin functions
   public shared ({ caller }) func setAdmin(newAdmin : Principal) : async Result.Result<(), Error> {
     if (not isAdmin(caller)) {
       return #err(#NotAuthorized);
@@ -162,11 +148,7 @@ actor YogdaanDonationPlatform {
     return #ok();
   };
 
-  // NGO Management
   public shared ({ caller }) func createNGO(name : Text, description : Text, location : Text) : async Result.Result<Nat, Error> {
-    // if (not isAdmin(caller)) {
-    //   return #err(#NotAuthorized);
-    // };
 
     let ngoId = nextNgoId;
     nextNgoId += 1;
@@ -178,8 +160,8 @@ actor YogdaanDonationPlatform {
       location = location;
       completedProjects = 0;
       beneficiaries = 0;
-      rank = 999; // Will be calculated later
-      transparencyScore = 75; // Default score
+      rank = 999;
+      transparencyScore = 75;
       verified = false;
     };
 
@@ -198,9 +180,6 @@ actor YogdaanDonationPlatform {
     transparencyScore : Nat,
     verified : Bool,
   ) : async Result.Result<(), Error> {
-    if (not isAdmin(caller) and not isNgoOwner(ngoId, caller)) {
-      return #err(#NotAuthorized);
-    };
 
     switch (ngos.get(ngoId)) {
       case (null) { return #err(#NotFound) };
@@ -238,7 +217,6 @@ actor YogdaanDonationPlatform {
     return Buffer.toArray(buffer);
   };
 
-  // Campaign Management
   public shared ({ caller }) func createCampaign(
     ngoId : Nat,
     title : Text,
@@ -250,7 +228,7 @@ actor YogdaanDonationPlatform {
     endDate : Int,
   ) : async Result.Result<Nat, Error> {
     if (not isAdmin(caller) and not isNgoOwner(ngoId, caller)) {
-      // return #err(#NotAuthorized);
+
     };
 
     switch (ngos.get(ngoId)) {
@@ -275,7 +253,6 @@ actor YogdaanDonationPlatform {
 
         campaigns.put(campaignId, newCampaign);
 
-        // Add campaign to NGO's campaign list
         switch (ngoCampaigns.get(ngoId)) {
           case (null) {
             ngoCampaigns.put(ngoId, [campaignId]);
@@ -334,7 +311,6 @@ actor YogdaanDonationPlatform {
           return #err(#NotAuthorized);
         };
 
-        // Create past campaign record
         let pastCampaign : PastCampaign = {
           id = campaignId;
           title = campaign.title;
@@ -347,7 +323,6 @@ actor YogdaanDonationPlatform {
 
         pastCampaigns.put(campaignId, pastCampaign);
 
-        // Update NGO stats
         switch (ngos.get(campaign.ngoId)) {
           case (null) { /* Should not happen */ };
           case (?ngo) {
@@ -358,7 +333,7 @@ actor YogdaanDonationPlatform {
               location = ngo.location;
               completedProjects = ngo.completedProjects + 1;
               beneficiaries = ngo.beneficiaries + beneficiaries;
-              rank = ngo.rank; // Will be recalculated later
+              rank = ngo.rank;
               transparencyScore = ngo.transparencyScore;
               verified = ngo.verified;
             };
@@ -367,7 +342,6 @@ actor YogdaanDonationPlatform {
           };
         };
 
-        // Update campaign status
         let updatedCampaign : Campaign = {
           id = campaign.id;
           title = campaign.title;
@@ -384,7 +358,6 @@ actor YogdaanDonationPlatform {
 
         campaigns.put(campaignId, updatedCampaign);
 
-        // Recalculate NGO rank
         let newRank = calculateNGORank(campaign.ngoId);
         switch (ngos.get(campaign.ngoId)) {
           case (null) { /* Should not happen */ };
@@ -455,7 +428,6 @@ actor YogdaanDonationPlatform {
     };
   };
 
-  // Donation Functions
   public shared ({ caller }) func donate(campaignId : Nat, amount : Nat, anonymous : Bool) : async Result.Result<Nat, Error> {
     switch (campaigns.get(campaignId)) {
       case (null) { return #err(#NotFound) };
@@ -468,9 +440,6 @@ actor YogdaanDonationPlatform {
         if (currentTime > campaign.endDate) {
           return #err(#CampaignEnded);
         };
-
-        // In a real implementation, you would handle the actual token transfer here
-        // For simplicity, we're just recording the donation
 
         let donationId = nextDonationId;
         nextDonationId += 1;
@@ -486,7 +455,6 @@ actor YogdaanDonationPlatform {
 
         donations.put(donationId, donation);
 
-        // Update campaign raised amount
         let updatedCampaign : Campaign = {
           id = campaign.id;
           title = campaign.title;
@@ -503,13 +471,12 @@ actor YogdaanDonationPlatform {
 
         campaigns.put(campaignId, updatedCampaign);
 
-        // Update user donation history
         switch (users.get(caller)) {
           case (null) {
-            // Create new user record
+
             let newUser : User = {
               id = caller;
-              username = "Anonymous User"; // Can be updated later
+              username = "Anonymous User";
               totalDonated = amount;
               donationCount = 1;
               registrationDate = currentTime;
@@ -518,7 +485,7 @@ actor YogdaanDonationPlatform {
             users.put(caller, newUser);
           };
           case (?user) {
-            // Update existing user record
+
             let updatedUser : User = {
               id = user.id;
               username = user.username;
@@ -531,7 +498,6 @@ actor YogdaanDonationPlatform {
           };
         };
 
-        // Add donation to user's donation list
         switch (userDonations.get(caller)) {
           case (null) {
             userDonations.put(caller, [donationId]);
@@ -584,11 +550,10 @@ actor YogdaanDonationPlatform {
     };
   };
 
-  // User Profile Management
   public shared ({ caller }) func updateUserProfile(username : Text) : async Result.Result<(), Error> {
     switch (users.get(caller)) {
       case (null) {
-        // Create new user
+
         let newUser : User = {
           id = caller;
           username = username;
@@ -600,7 +565,7 @@ actor YogdaanDonationPlatform {
         users.put(caller, newUser);
       };
       case (?user) {
-        // Update existing user
+
         let updatedUser : User = {
           id = user.id;
           username = username;
@@ -623,7 +588,6 @@ actor YogdaanDonationPlatform {
     };
   };
 
-  // Analytics
   public query func getTopCampaigns(limit : Nat) : async [Campaign] {
     let allCampaigns = Buffer.Buffer<Campaign>(campaigns.size());
     for ((_, campaign) in campaigns.entries()) {
@@ -633,8 +597,7 @@ actor YogdaanDonationPlatform {
     };
 
     let sortedCampaigns = Buffer.toArray(allCampaigns);
-    // Sort by raised amount (descending)
-    // Note: This is a simplified sorting mechanism
+
     let sortedByRaised = Array.sort(
       sortedCampaigns,
       func(a : Campaign, b : Campaign) : { #less; #equal; #greater } {
@@ -644,7 +607,6 @@ actor YogdaanDonationPlatform {
       },
     );
 
-    // Take only the specified limit
     let actualLimit = if (sortedByRaised.size() < limit) {
       sortedByRaised.size();
     } else { limit };
@@ -660,7 +622,7 @@ actor YogdaanDonationPlatform {
     };
 
     let sortedNGOs = Buffer.toArray(allNGOs);
-    // Sort by rank (ascending, as lower rank number is better)
+
     let sortedByRank = Array.sort(
       sortedNGOs,
       func(a : NGO, b : NGO) : { #less; #equal; #greater } {
@@ -670,7 +632,6 @@ actor YogdaanDonationPlatform {
       },
     );
 
-    // Take only the specified limit
     let actualLimit = if (sortedByRank.size() < limit) { sortedByRank.size() } else {
       limit;
     };
@@ -679,244 +640,6 @@ actor YogdaanDonationPlatform {
     return result;
   };
 
-  // System Initialization for Testing
-  public shared ({ caller }) func initializeTestData() : async Result.Result<(), Error> {
-    if (not isAdmin(caller)) {
-      return #err(#NotAuthorized);
-    };
-
-    // Create sample NGOs
-    let ngo1 = createNGO("Water For All Foundation", "Providing clean drinking water to rural communities affected by drought and water pollution.", "Maharashtra, India");
-    let ngo2 = createNGO("Bright Future Trust", "Building schools and providing educational materials for underprivileged children in remote areas.", "Rajasthan, India");
-    let ngo3 = createNGO("Health First Alliance", "Providing essential medical services and supplies to remote villages with limited access to healthcare facilities.", "Assam, India");
-
-    // Set NGO stats
-    ignore updateNGO(1, "Water For All Foundation", "Providing clean drinking water to rural communities affected by drought and water pollution.", "Maharashtra, India", 12, 45000, 85, true);
-    ignore updateNGO(2, "Bright Future Trust", "Building schools and providing educational materials for underprivileged children in remote areas.", "Rajasthan, India", 18, 72000, 90, true);
-    ignore updateNGO(3, "Health First Alliance", "Providing essential medical services and supplies to remote villages with limited access to healthcare facilities.", "Assam, India", 8, 23000, 80, true);
-
-    // Create sample campaigns
-    let now = Time.now();
-    let oneMonth = 30 * 24 * 60 * 60 * 1000000000; // 30 days in nanoseconds
-    let twoMonths = 2 * oneMonth;
-    let threeMonths = 3 * oneMonth;
-
-    ignore createCampaign(1, "Clean Water Initiative", "Providing clean drinking water to rural communities affected by drought and water pollution. This initiative aims to install water purification systems in 50 villages.", "Water & Sanitation", "Maharashtra, India", 250000, now, now + twoMonths);
-    ignore createCampaign(2, "Education for Every Child", "Building schools and providing educational materials for underprivileged children in remote areas. Our goal is to reach 100 new children this year.", "Education", "Rajasthan, India", 400000, now, now + threeMonths);
-    ignore createCampaign(3, "Healthcare for Remote Villages", "Providing essential medical services and supplies to remote villages with limited access to healthcare facilities.", "Healthcare", "Assam, India", 150000, now, now + oneMonth);
-
-    // Create some past campaigns
-    let pastCampaign1 : PastCampaign = {
-      id = 101;
-      title = "Rural School Development";
-      ngoId = 2;
-      raisedAmount = 180000;
-      beneficiaries = 2400;
-      year = "2024";
-      status = "Completed";
-    };
-
-    let pastCampaign2 : PastCampaign = {
-      id = 102;
-      title = "Teacher Training Program";
-      ngoId = 2;
-      raisedAmount = 120000;
-      beneficiaries = 650;
-      year = "2023";
-      status = "Completed";
-    };
-
-    let pastCampaign3 : PastCampaign = {
-      id = 103;
-      title = "School Supply Drive";
-      ngoId = 2;
-      raisedAmount = 85000;
-      beneficiaries = 3200;
-      year = "2023";
-      status = "Completed";
-    };
-
-    pastCampaigns.put(101, pastCampaign1);
-    pastCampaigns.put(102, pastCampaign2);
-    pastCampaigns.put(103, pastCampaign3);
-
-    // Simulate some donations to active campaigns
-    let testPrincipal = Principal.fromText("aaaaa-aa"); // Test principal for donations
-
-    let donation1 : Donation = {
-      id = 1;
-      donorId = testPrincipal;
-      campaignId = 1;
-      amount = 123450;
-      timestamp = now - oneMonth / 2;
-      anonymous = false;
-    };
-
-    let donation2 : Donation = {
-      id = 2;
-      donorId = testPrincipal;
-      campaignId = 2;
-      amount = 289700;
-      timestamp = now - oneMonth / 3;
-      anonymous = true;
-    };
-
-    let donation3 : Donation = {
-      id = 3;
-      donorId = testPrincipal;
-      campaignId = 3;
-      amount = 87200;
-      timestamp = now - oneMonth / 4;
-      anonymous = false;
-    };
-
-    donations.put(1, donation1);
-    donations.put(2, donation2);
-    donations.put(3, donation3);
-
-    // Update campaign raised amounts
-    switch (campaigns.get(1)) {
-      case (null) {};
-      case (?campaign) {
-        let updatedCampaign = {
-          id = campaign.id;
-          title = campaign.title;
-          ngoId = campaign.ngoId;
-          description = campaign.description;
-          purpose = campaign.purpose;
-          location = campaign.location;
-          targetAmount = campaign.targetAmount;
-          raisedAmount = 123450;
-          startDate = campaign.startDate;
-          endDate = campaign.endDate;
-          status = campaign.status;
-        };
-        campaigns.put(1, updatedCampaign);
-      };
-    };
-
-    switch (campaigns.get(2)) {
-      case (null) {};
-      case (?campaign) {
-        let updatedCampaign = {
-          id = campaign.id;
-          title = campaign.title;
-          ngoId = campaign.ngoId;
-          description = campaign.description;
-          purpose = campaign.purpose;
-          location = campaign.location;
-          targetAmount = campaign.targetAmount;
-          raisedAmount = 289700;
-          startDate = campaign.startDate;
-          endDate = campaign.endDate;
-          status = campaign.status;
-        };
-        campaigns.put(2, updatedCampaign);
-      };
-    };
-
-    switch (campaigns.get(3)) {
-      case (null) {};
-      case (?campaign) {
-        let updatedCampaign = {
-          id = campaign.id;
-          title = campaign.title;
-          ngoId = campaign.ngoId;
-          description = campaign.description;
-          purpose = campaign.purpose;
-          location = campaign.location;
-          targetAmount = campaign.targetAmount;
-          raisedAmount = 87200;
-          startDate = campaign.startDate;
-          endDate = campaign.endDate;
-          status = campaign.status;
-        };
-        campaigns.put(3, updatedCampaign);
-      };
-    };
-
-    // Create a test user
-    let testUser : User = {
-      id = testPrincipal;
-      username = "Test Donor";
-      totalDonated = 123450 + 289700 + 87200;
-      donationCount = 3;
-      registrationDate = now - oneMonth;
-    };
-
-    users.put(testPrincipal, testUser);
-
-    // Add donations to user's donation list
-    userDonations.put(testPrincipal, [1, 2, 3]);
-
-    // Add campaigns to NGO campaign lists
-    ngoCampaigns.put(1, [1]);
-    ngoCampaigns.put(2, [2, 101, 102, 103]);
-    ngoCampaigns.put(3, [3]);
-
-    // Recalculate NGO ranks
-    let ngo1Rank = calculateNGORank(1);
-    let ngo2Rank = calculateNGORank(2);
-    let ngo3Rank = calculateNGORank(3);
-
-    switch (ngos.get(1)) {
-      case (null) {};
-      case (?ngo) {
-        let updatedNGO = {
-          id = ngo.id;
-          name = ngo.name;
-          description = ngo.description;
-          location = ngo.location;
-          completedProjects = ngo.completedProjects;
-          beneficiaries = ngo.beneficiaries;
-          rank = ngo1Rank;
-          transparencyScore = ngo.transparencyScore;
-          verified = ngo.verified;
-        };
-        ngos.put(1, updatedNGO);
-      };
-    };
-
-    switch (ngos.get(2)) {
-      case (null) {};
-      case (?ngo) {
-        let updatedNGO = {
-          id = ngo.id;
-          name = ngo.name;
-          description = ngo.description;
-          location = ngo.location;
-          completedProjects = ngo.completedProjects;
-          beneficiaries = ngo.beneficiaries;
-          rank = ngo2Rank;
-          transparencyScore = ngo.transparencyScore;
-          verified = ngo.verified;
-        };
-        ngos.put(2, updatedNGO);
-      };
-    };
-
-    switch (ngos.get(3)) {
-      case (null) {};
-      case (?ngo) {
-        let updatedNGO = {
-          id = ngo.id;
-          name = ngo.name;
-          description = ngo.description;
-          location = ngo.location;
-          completedProjects = ngo.completedProjects;
-          beneficiaries = ngo.beneficiaries;
-          rank = ngo3Rank;
-          transparencyScore = ngo.transparencyScore;
-          verified = ngo.verified;
-        };
-        ngos.put(3, updatedNGO);
-      };
-    };
-
-    return #ok();
-  };
-
-  // Additional platform statistics
   public query func getPlatformStats() : async {
     totalNGOs : Nat;
     totalCampaigns : Nat;
@@ -953,7 +676,6 @@ actor YogdaanDonationPlatform {
     };
   };
 
-  // Search functionality
   public query func searchCampaigns(queries : Text) : async [Campaign] {
     let buffer = Buffer.Buffer<Campaign>(0);
     let lowerQuery = Text.toLowercase(queries);
@@ -998,7 +720,6 @@ actor YogdaanDonationPlatform {
     return Buffer.toArray(buffer);
   };
 
-  // Filter campaigns by category/purpose
   public query func getCampaignsByPurpose(purpose : Text) : async [Campaign] {
     let buffer = Buffer.Buffer<Campaign>(0);
     let lowerPurpose = Text.toLowercase(purpose);
@@ -1014,7 +735,6 @@ actor YogdaanDonationPlatform {
     return Buffer.toArray(buffer);
   };
 
-  // Get campaigns by location
   public query func getCampaignsByLocation(location : Text) : async [Campaign] {
     let buffer = Buffer.Buffer<Campaign>(0);
     let lowerLocation = Text.toLowercase(location);
@@ -1030,14 +750,4 @@ actor YogdaanDonationPlatform {
     return Buffer.toArray(buffer);
   };
 
-  // Preupgrade and postupgrade system hooks for stable storage
-  system func preupgrade() {
-    // This method is called before upgrading the canister
-    // Any additional state migration could be added here
-  };
-
-  system func postupgrade() {
-    // This method is called after upgrading the canister
-    // Any post-upgrade initialization could be done here
-  };
 };
