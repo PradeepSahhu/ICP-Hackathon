@@ -250,7 +250,7 @@ actor YogdaanDonationPlatform {
     endDate : Int,
   ) : async Result.Result<Nat, Error> {
     if (not isAdmin(caller) and not isNgoOwner(ngoId, caller)) {
-      // return #err(#NotAuthorized);
+      return #err(#NotAuthorized);
     };
 
     switch (ngos.get(ngoId)) {
@@ -954,9 +954,9 @@ actor YogdaanDonationPlatform {
   };
 
   // Search functionality
-  public query func searchCampaigns(searchQuery : Text) : async [Campaign] {
+  public query func searchCampaigns(query : Text) : async [Campaign] {
     let buffer = Buffer.Buffer<Campaign>(0);
-    let lowerQuery = Text.toLowercase(searchQuery);
+    let lowerQuery = Text.toLowercase(query);
 
     for ((_, campaign) in campaigns.entries()) {
       let lowerTitle = Text.toLowercase(campaign.title);
@@ -977,9 +977,9 @@ actor YogdaanDonationPlatform {
     return Buffer.toArray(buffer);
   };
 
-  public query func searchNGOs(queries : Text) : async [NGO] {
+  public query func searchNGOs(query : Text) : async [NGO] {
     let buffer = Buffer.Buffer<NGO>(0);
-    let lowerQuery = Text.toLowercase(queries);
+    let lowerQuery = Text.toLowercase(query);
 
     for ((_, ngo) in ngos.entries()) {
       let lowerName = Text.toLowercase(ngo.name);
