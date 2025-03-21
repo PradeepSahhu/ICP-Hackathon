@@ -164,9 +164,9 @@ actor YogdaanDonationPlatform {
 
   // NGO Management
   public shared ({ caller }) func createNGO(name : Text, description : Text, location : Text) : async Result.Result<Nat, Error> {
-    if (not isAdmin(caller)) {
-      return #err(#NotAuthorized);
-    };
+    // if (not isAdmin(caller)) {
+    //   return #err(#NotAuthorized);
+    // };
 
     let ngoId = nextNgoId;
     nextNgoId += 1;
@@ -250,7 +250,7 @@ actor YogdaanDonationPlatform {
     endDate : Int,
   ) : async Result.Result<Nat, Error> {
     if (not isAdmin(caller) and not isNgoOwner(ngoId, caller)) {
-      return #err(#NotAuthorized);
+      // return #err(#NotAuthorized);
     };
 
     switch (ngos.get(ngoId)) {
