@@ -750,11 +750,4 @@ actor YogdaanDonationPlatform {
     return Buffer.toArray(buffer);
   };
 
-  system func preupgrade() {
-
-  };
-
-  system func postupgrade() {
-
-  };
 };
