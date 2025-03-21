@@ -954,9 +954,9 @@ actor YogdaanDonationPlatform {
   };
 
   // Search functionality
-  public query func searchCampaigns(query : Text) : async [Campaign] {
+  public query func searchCampaigns(queries : Text) : async [Campaign] {
     let buffer = Buffer.Buffer<Campaign>(0);
-    let lowerQuery = Text.toLowercase(query);
+    let lowerQuery = Text.toLowercase(queries);
 
     for ((_, campaign) in campaigns.entries()) {
       let lowerTitle = Text.toLowercase(campaign.title);
@@ -977,9 +977,9 @@ actor YogdaanDonationPlatform {
     return Buffer.toArray(buffer);
   };
 
-  public query func searchNGOs(query : Text) : async [NGO] {
+  public query func searchNGOs(queries : Text) : async [NGO] {
     let buffer = Buffer.Buffer<NGO>(0);
-    let lowerQuery = Text.toLowercase(query);
+    let lowerQuery = Text.toLowercase(queries);
 
     for ((_, ngo) in ngos.entries()) {
       let lowerName = Text.toLowercase(ngo.name);
