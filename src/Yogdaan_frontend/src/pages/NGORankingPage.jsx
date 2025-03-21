@@ -317,11 +317,8 @@ const NGORankingPage = () => {
       {/* Navigation */}
       <header className="sticky top-0 z-10 bg-slate-900/90 backdrop-blur-md border-b border-white/5">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/">
           <div className="flex items-center space-x-2">
-            {/* Back button */}
-            <a href="/" className="mr-2 text-gray-300 hover:text-purple-400 transition-colors">
-              <ArrowLeft size={20} />
-            </a>
             {/* Logo */}
             <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
               <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -332,6 +329,7 @@ const NGORankingPage = () => {
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">Yogdaan</span>
           </div>
+          </a>
           
           {/* Desktop Navigation - centered */}
           <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
@@ -339,11 +337,11 @@ const NGORankingPage = () => {
               <Award className="mr-2" size={16} />
               NGOs Rankings
             </a>
-            <a href="/trade" className="text-gray-300 hover:text-purple-400 transition-colors flex items-center">
+            <a href="/trading" className="text-gray-300 hover:text-purple-400 transition-colors flex items-center">
               <TrendingUp className="mr-2" size={16} />
-              Trade
+              Investment
             </a>
-            <a href="/campaign" className="text-gray-300 hover:text-purple-400 transition-colors flex items-center">
+            <a href="/compaign" className="text-gray-300 hover:text-purple-400 transition-colors flex items-center">
               <BarChart2 className="mr-2" size={16} />
               Campaign
             </a>

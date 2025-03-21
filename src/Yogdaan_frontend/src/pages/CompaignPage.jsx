@@ -421,6 +421,7 @@ const YogdaanCampaignPage = () => {
       {/* Navigation */}
       <header>
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/">
           <div className="flex items-center space-x-2">
             {/* Logo */}
             <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
@@ -432,18 +433,19 @@ const YogdaanCampaignPage = () => {
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">Yogdaan</span>
           </div>
+          </a>
           
           {/* Desktop Navigation - centered */}
           <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-            <a href="#" className="text-gray-300 hover:text-purple-400 transition-colors flex items-center">
+            <a href="/ngo-rankings" className="text-gray-300 hover:text-purple-400 transition-colors flex items-center">
               <Award className="mr-1" size={16} />
               NGOs Rankings
             </a>
-            <a href="#" className="text-gray-300 hover:text-purple-400 transition-colors flex items-center">
+            <a href="trading" className="text-gray-300 hover:text-purple-400 transition-colors flex items-center">
               <TrendingUp className="mr-1" size={16} />
-              Trade
+              Investment
             </a>
-            <a href="#" className="text-purple-400 border-b-2 border-purple-500 pb-1 transition-colors flex items-center">
+            <a href="compaign" className="text-purple-400 border-b-2 border-purple-500 pb-1 transition-colors flex items-center">
               <Heart className="mr-1" size={16} />
               Campaign
             </a>

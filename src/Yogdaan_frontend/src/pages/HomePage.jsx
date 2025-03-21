@@ -27,8 +27,9 @@ const YogdaanHomepage = () => {
     
     // Create a sphere geometry for the globe effect
     const sphereGeometry = new THREE.SphereGeometry(3, 64, 64);
+    // Changed to amber color
     const sphereMaterial = new THREE.MeshBasicMaterial({
-      color: 0x5e35b1,
+      color: 0xf59e0b,
       wireframe: true,
       transparent: true,
       opacity: 0.3
@@ -47,9 +48,10 @@ const YogdaanHomepage = () => {
     }
     
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    // Changed to orange color
     const particlesMaterial = new THREE.PointsMaterial({
       size: 0.02,
-      color: 0xab47bc
+      color: 0xea580c
     });
     
     const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
@@ -112,8 +114,9 @@ const YogdaanHomepage = () => {
     const baseClasses = "rounded-full font-medium transition-all duration-300 shadow-lg flex items-center justify-center";
     
     const variants = {
-      primary: "bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white",
-      outline: "border-2 border-purple-500 text-purple-500 hover:bg-purple-500/10",
+      // Changed to amber-orange gradient
+      primary: "bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white",
+      outline: "border-2 border-amber-500 text-amber-500 hover:bg-amber-500/10",
       secondary: "bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/20"
     };
     
@@ -160,7 +163,7 @@ const YogdaanHomepage = () => {
   ];
 
   return (
-    <div ref={containerRef} className="relative min-h-screen bg-gradient-to-b from-gray-900 via-violet-900/20 to-slate-900 text-white overflow-hidden">
+    <div ref={containerRef} className="relative min-h-screen bg-gradient-to-b from-gray-900 via-amber-900/20 to-slate-900 text-white overflow-hidden">
       {/* 3D Background */}
       <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10" />
       
@@ -172,28 +175,28 @@ const YogdaanHomepage = () => {
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             {/* Logo */}
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 flex items-center justify-center">
               <Heart className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">Yogdaan</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Yogdaan</span>
           </div>
           
           {/* Desktop Navigation - centered */}
           <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-            <a href="#" className="text-gray-300 hover:text-purple-400 transition-colors flex items-center group">
+            <a href="/ngo-rankings" className="text-gray-300 hover:text-amber-400 transition-colors flex items-center group">
               <Award className="mr-1" size={16} />
               <span>NGOs Rankings</span>
-              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-purple-400 mt-0.5"></span>
+              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-amber-400 mt-0.5"></span>
             </a>
-            <a href="#" className="text-gray-300 hover:text-purple-400 transition-colors flex items-center group">
+            <a href="/trading" className="text-gray-300 hover:text-amber-400 transition-colors flex items-center group">
               <TrendingUp className="mr-1" size={16} />
-              <span>Trade</span>
-              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-purple-400 mt-0.5"></span>
+              <span>Investment</span>
+              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-amber-400 mt-0.5"></span>
             </a>
-            <a href="#" className="text-gray-300 hover:text-purple-400 transition-colors flex items-center group">
+            <a href="/compaign" className="text-gray-300 hover:text-amber-400 transition-colors flex items-center group">
               <BarChart2 className="mr-1" size={16} />
               <span>Campaign</span>
-              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-purple-400 mt-0.5"></span>
+              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-amber-400 mt-0.5"></span>
             </a>
           </div>
           
@@ -203,13 +206,13 @@ const YogdaanHomepage = () => {
               <input
                 type="text"
                 placeholder="Search NGOs..."
-                className="pl-10 pr-4 py-2 rounded-full bg-white/5 border border-white/10 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 focus:outline-none text-white w-48 transition-all duration-300 focus:w-64"
+                className="pl-10 pr-4 py-2 rounded-full bg-white/5 border border-white/10 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 focus:outline-none text-white w-48 transition-all duration-300 focus:w-64"
               />
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
             </div>
             <div className="relative">
               <button 
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-purple-400 hover:border-purple-500/50 transition-all cursor-pointer"
+                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-amber-400 hover:border-amber-500/50 transition-all cursor-pointer"
                 onClick={() => setShowProfileMenu(!showProfileMenu)}
               >
                 <User size={18} />
@@ -223,14 +226,14 @@ const YogdaanHomepage = () => {
                     <div className="text-xs text-gray-400">guest@example.com</div>
                   </div>
                   <div className="py-1">
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-purple-500/20 rounded-lg">Profile</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-purple-500/20 rounded-lg">My Donations</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-purple-500/20 rounded-lg">Watchlist</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-purple-500/20 rounded-lg">Holdings</a>
+                    <a href="/user-profile" className="block px-4 py-2 text-sm text-gray-300 hover:bg-amber-500/20 rounded-lg">Profile</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-amber-500/20 rounded-lg">My Donations</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-amber-500/20 rounded-lg">Watchlist</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-amber-500/20 rounded-lg">Holdings</a>
                   </div>
                   <div className="py-1 border-t border-white/10">
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-purple-500/20 rounded-lg">Settings</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-purple-500/20 rounded-lg">Log Out</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-amber-500/20 rounded-lg">Settings</a>
+                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-amber-500/20 rounded-lg">Log Out</a>
                   </div>
                 </div>
               )}
@@ -254,23 +257,23 @@ const YogdaanHomepage = () => {
                 <input
                   type="text"
                   placeholder="Search NGOs..."
-                  className="pl-10 pr-4 py-2 rounded-full bg-white/5 border border-white/10 focus:border-purple-500 focus:outline-none text-white w-full"
+                  className="pl-10 pr-4 py-2 rounded-full bg-white/5 border border-white/10 focus:border-amber-500 focus:outline-none text-white w-full"
                 />
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
               </div>
-              <a href="#" className="text-gray-300 hover:text-purple-400 transition-colors py-2 flex items-center">
+              <a href="#" className="text-gray-300 hover:text-amber-400 transition-colors py-2 flex items-center">
                 <Award className="mr-2" size={18} />
                 NGOs Rankings
               </a>
-              <a href="#" className="text-gray-300 hover:text-purple-400 transition-colors py-2 flex items-center">
+              <a href="#" className="text-gray-300 hover:text-amber-400 transition-colors py-2 flex items-center">
                 <TrendingUp className="mr-2" size={18} />
                 Trade
               </a>
-              <a href="#" className="text-gray-300 hover:text-purple-400 transition-colors py-2 flex items-center">
+              <a href="#" className="text-gray-300 hover:text-amber-400 transition-colors py-2 flex items-center">
                 <BarChart2 className="mr-2" size={18} />
                 Campaign
               </a>
-              <a href="#" className="text-gray-300 hover:text-purple-400 transition-colors py-2 flex items-center">
+              <a href="#" className="text-gray-300 hover:text-amber-400 transition-colors py-2 flex items-center">
                 <User className="mr-2" size={18} />
                 Profile
               </a>
@@ -283,11 +286,11 @@ const YogdaanHomepage = () => {
       <section className="relative z-0 pt-20 pb-16 md:py-32 flex items-center min-h-screen">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-block px-3 py-1 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm font-medium text-purple-300">
+            <div className="inline-block px-3 py-1 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm font-medium text-amber-300">
               Blockchain Powered Donations
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">Donate with</span>
+              <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Donate with</span>
               <br />
               <span className="text-white">Complete Control</span>
             </h1>
@@ -299,7 +302,7 @@ const YogdaanHomepage = () => {
             <div className="flex flex-col sm:flex-row justify-center space-y-6 sm:space-y-0 sm:space-x-8">
               <Button className="px-12 py-5 text-lg sm:w-48 group relative overflow-hidden">
                 <span className="relative z-10">Donate Now</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-purple-500/50 to-indigo-600/50 opacity-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-500 rounded-full"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-amber-500/50 to-orange-600/50 opacity-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-500 rounded-full"></span>
               </Button>
               <Button variant="outline" className="px-12 py-5 text-lg sm:w-48 group">
                 <span>Explore NGOs</span>
@@ -313,7 +316,7 @@ const YogdaanHomepage = () => {
                 {features.map((_, index) => (
                   <button 
                     key={index} 
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${index === activeFeature ? 'bg-purple-500 w-8' : 'bg-gray-600'}`}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${index === activeFeature ? 'bg-amber-500 w-8' : 'bg-gray-600'}`}
                     onClick={() => setActiveFeature(index)}
                   />
                 ))}
@@ -331,8 +334,8 @@ const YogdaanHomepage = () => {
             {/* Stats under the buttons */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12">
               {impactStats.map((stat, index) => (
-                <div key={index} className="p-4 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 hover:border-purple-500/30 hover:transform hover:scale-105 transition-all duration-300">
-                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent mb-1">
+                <div key={index} className="p-4 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 hover:border-amber-500/30 hover:transform hover:scale-105 transition-all duration-300">
+                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent mb-1">
                     {stat.value}
                   </div>
                   <div className="text-gray-400 text-sm">{stat.label}</div>
@@ -347,17 +350,17 @@ const YogdaanHomepage = () => {
           <div className="container mx-auto px-6">
             <div className="text-center mb-8">
               <h2 className="text-xl font-semibold text-white">Top Ranked NGOs</h2>
-              <div className="w-16 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto mt-2"></div>
+              <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-2"></div>
             </div>
             
             <div className="flex justify-center space-x-4 md:space-x-8 overflow-x-auto pb-4 no-scrollbar">
               {FeaturedNGOs.map((ngo, index) => (
                 <div key={index} className="text-center group">
                   <div className="relative">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-3xl group-hover:bg-gradient-to-r from-purple-500/20 to-indigo-500/20 transition-all duration-300 group-hover:border-purple-500/50">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-3xl group-hover:bg-gradient-to-r from-amber-500/20 to-orange-500/20 transition-all duration-300 group-hover:border-amber-500/50">
                       {ngo.logo}
                     </div>
-                    <div className="absolute -bottom-2 -right-2 w-6 h-6 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center text-white text-xs font-bold">
+                    <div className="absolute -bottom-2 -right-2 w-6 h-6 rounded-full bg-gradient-to-r from-amber-600 to-orange-600 flex items-center justify-center text-white text-xs font-bold">
                       {ngo.rank}
                     </div>
                   </div>
@@ -369,7 +372,7 @@ const YogdaanHomepage = () => {
             </div>
             
             <div className="text-center mt-4">
-              <a href="#" className="text-purple-400 hover:text-purple-300 text-sm flex items-center justify-center">
+              <a href="#" className="text-amber-400 hover:text-amber-300 text-sm flex items-center justify-center">
                 View All Rankings <ExternalLink size={14} className="ml-1" />
               </a>
             </div>
@@ -377,8 +380,8 @@ const YogdaanHomepage = () => {
         </div>
         
         {/* Decorative elements */}
-        <div className="absolute bottom-10 left-10 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl opacity-70"></div>
-        <div className="absolute top-1/4 right-10 w-24 h-24 bg-indigo-500/20 rounded-full blur-2xl opacity-70"></div>
+        <div className="absolute bottom-10 left-10 w-32 h-32 bg-amber-500/20 rounded-full blur-3xl opacity-70"></div>
+        <div className="absolute top-1/4 right-10 w-24 h-24 bg-orange-500/20 rounded-full blur-2xl opacity-70"></div>
       </section>
       
       {/* Footer */}
@@ -386,20 +389,20 @@ const YogdaanHomepage = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-amber-600 to-orange-600 flex items-center justify-center">
                 <Heart className="w-4 h-4 text-white" />
               </div>
-              <span className="text-sm font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">Yogdaan</span>
+              <span className="text-sm font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Yogdaan</span>
             </div>
             
             <div className="text-gray-500 text-sm">© 2025 Yogdaan | Your donations, your decisions</div>
             
             <div className="flex items-center space-x-4 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors text-xs">Privacy</a>
+              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors text-xs">Privacy</a>
               <span className="text-gray-600">|</span>
-              <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors text-xs">Terms</a>
+              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors text-xs">Terms</a>
               <span className="text-gray-600">|</span>
-              <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors text-xs">Contact</a>
+              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors text-xs">Contact</a>
             </div>
           </div>
         </div>
