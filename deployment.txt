@@ -1,0 +1,1862 @@
+    1  code .
+    2  cobra-cli run
+    3  cobra run main.go
+    4  cobra-cli run main.go
+    5  go run main.go
+    6  cd
+    7  cd Downloads
+    8  ssh -i "web.pem" ec2-user@ec2-54-161-93-198.compute-1.amazonaws.com
+    9  ls -la
+   10  sudo chmod 774 web.pem
+   11  ssh -i "web.pem" ec2-user@ec2-54-161-93-198.compute-1.amazonaws.com
+   12  ssh -i web.pem ec2-user@ec2-54-161-93-198.compute-1.amazonaws.com
+   13  cd Desktop
+   14  mkdir JobScript
+   15  cd JobScript
+   16  ls
+   17  code .
+   18  pip install gspread oauth2client\n
+   19  python3 script.py
+   20  cd Desktop
+   21  ls
+   22  cd JobScript
+   23  ls
+   24  code .
+   25  python3 scripy.py
+   26  python3 script.py
+   27  python script.py
+   28  python3 script.py
+   29  git init
+   30  git add .
+   31  git commit -m "auto job application"
+   32  git push -u origin main
+   33  python3 script.py
+   34  code .
+   35  pip install selenium\n
+   36  cd
+   37  cd Desktop
+   38  cd static
+   39  ls
+   40  cd Staticpe
+   41  ls
+   42  sudo npm run dev
+   43  ipaddr 
+   44  ifconfig | grep inet\n
+   45  ifconfig
+   46  cd Downloads
+   47  ls
+   48  chmod 400 "webNew.pem"
+   49  cd ..
+   50  cd Desktop
+   51  chmod 400 "webNew.pem"
+   52  ssh -i "webNew.pem" ec2-user@ec2-54-89-75-220.compute-1.amazonaws.com
+   53  chmod 400 "tween-dev-prod.pem"
+   54  ssh -i "tween-dev-prod.pem" ubuntu@ec2-44-201-86-160.compute-1.amazonaws.com
+   55  curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"\nunzip awscli-bundle.zip\nsudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+   56  aws
+   57  aws --version
+   58  curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"\nunzip awscli-bundle.zip\nsudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+   59  aws
+   60  aws config
+   61  aws configure
+   62  cd Desktop
+   63  ls
+   64  code placement_DSA
+   65  ls
+   66  cd placement_DSA
+   67  ls
+   68  mkdir contest
+   69  cd contest
+   70  ls
+   71  code .
+   72  cd ..
+   73  chmod 400 "tween-dev-prod.pem"
+   74  ssh -i "tween-dev-prod.pem" ubuntu@ec2-54-172-53-0.compute-1.amazonaws.com
+   75  cd Desktop
+   76  ls
+   77  cd bajaj
+   78  ls
+   79  cd client
+   80  ls
+   81  sudo npm run build
+   82  code .
+   83  ls
+   84  sudo npm run build
+   85  ssh -i "tween-dev-prod.pem" ubuntu@ec2-54-172-53-0.compute-1.amazonaws.com
+   86  cd ..
+   87  clear
+   88  ssh -i "tween-dev-prod.pem" ubuntu@ec2-54-92-203-154.compute-1.amazonaws.com
+   89  cd Desktop
+   90  ls
+   91  cd bajaj
+   92  ls
+   93  cd server
+   94  ls
+   95  code .
+   96  cd ..
+   97  cd client
+   98  ls
+   99  code .
+  100  cd ..
+  101  cd MerN
+  102  cd ..
+  103  cd MernLogin
+  104  ls
+  105  code .
+  106  sudo npm run build
+  107  sudo np i
+  108  sudo npm i
+  109  ls
+  110  ls -la
+  111  sudo rm -r package-lock.json
+  112  cd
+  113  cd Desktop/bajaj
+  114  ls
+  115  cd server
+  116  code vercel.json
+  117  cd my-app
+  118  sudo npm run build
+  119  cd ..
+  120  cd backend
+  121  ls
+  122  sudo npm run build
+  123  sudo npm run dev
+  124  ls
+  125  cd ..
+  126  git add .
+  127  git commit -m "configured the backend and frontend vercel.json files"
+  128  git push -u origin main
+  129  git push -u origin main --force
+  130  cd
+  131  cd Desktop/portfolio
+  132  ls
+  133  cd ..
+  134  mkdir portfolio_backend
+  135  cd portfolio_backend
+  136  ls
+  137  code .
+  138  sudo npm init
+  139  cd ..
+  140  sudo chmod -R 774 portfolio_backend
+  141  ls
+  142  cd portfolio_backend
+  143  cd src
+  144  ls
+  145  mkdir middleware
+  146  mkdir routes
+  147  mkdir utility
+  148  mkdir models
+  149  cd 
+  150  cd Desktop/portfolio_backend
+  151  ls
+  152  sudo npm i mongodb
+  153  cd ..
+  154  cd bajaj
+  155  cd server
+  156  ls
+  157  code .
+  158  node server.js
+  159  sudo npm run dev
+  160  sudo npm i mongoose
+  161  sudo npm run dev
+  162  node "/Users/pradeepsahu/Desktop/portfolio_backend/app.js"
+  163  sudo npm run dev
+  164  sudo npm i express
+  165  sudo npm run dev
+  166  sudo npm i cors
+  167  sudo npm i multer
+  168  sudo npm run dev
+  169  sudo npm i nodemon
+  170  sudo npm run dev
+  171  sudo npm i npm i body-parser
+  172  sudo npm i body-parser
+  173  sudo npm run dev
+  174  sudo npm i cookie-parser
+  175  sudo npm run dev
+  176  git init
+  177  git add .
+  178  git commit -m "completed the initial phase"
+  179  sudo rm -r .git
+  180  git init
+  181  git add .
+  182  git commit -m "completed the basics"
+  183  git branch -M main
+  184  git remote add origin https://github.com/PradeepSahhu/PortfolioBackend.git
+  185  git push -u origin main
+  186  touch vercel.json
+  187  sudo npm run dev
+  188  git add .
+  189  git commit -m "added the fileupload option locally"
+  190  git push -u origin main
+  191  git add .
+  192  git commit -m "added the fileupload option locally"
+  193  git push -u origin main
+  194  git add .
+  195  git commit -m "added vercel config"
+  196  git push -u origin main
+  197  git add .
+  198  git commit -m "memory storage"
+  199  git push -u origin main
+  200  sudo npm run dev
+  201  sudo npm i cloudinary
+  202  git add .
+  203  git commit -m "added to the cloudinary"
+  204  git push -u origin main
+  205  ls
+  206  pwd
+  207  cd ..
+  208  cd portfolio_backend
+  209  ls
+  210  code .
+  211  cd
+  212  cd Desktop
+  213  cd placement_DSA
+  214  ls
+  215  cd leetcode
+  216  ls
+  217  code .
+  218  cd Desktop/placement_DSA/leetcode
+  219  ls
+  220  code .
+  221  cd
+  222  cd Desktop
+  223  ls
+  224  git clone https://github.com/PradeepSahhu/Nimbus.git
+  225  cd Nimbus
+  226  ls
+  227  cd frontend
+  228  ls
+  229  code .
+  230  sudo npm i
+  231  sudo npm run dev
+  232  cd
+  233  cd Desktop
+  234  cd portfolio
+  235  cd ..
+  236  cd portfolio_backend
+  237  ls
+  238  code .
+  239  ls
+  240  sudo npm run dev
+  241  git add .
+  242  git commit -m "completed the cloudinary integration"
+  243  git push -u origin main
+  244  git add .
+  245  git commit -m "completed"
+  246  git push -u origin main
+  247  cd Desktop/portfolio_backend
+  248  ls
+  249  code .
+  250  git add .
+  251  git commit -m "added the edit"
+  252  git push -u origin main
+  253  cd Desktop/portfolio_backend
+  254  ls
+  255  code .
+  256  sudo npm run dev
+  257  cd Desktop/portfolio_backend
+  258  ls
+  259  code .
+  260  sudo npm run dev
+  261  git add .
+  262  git commit -m "added more functions"
+  263  git push -u origin main
+  264  git add .
+  265  git commit -m "completed"
+  266  git push -u origin main
+  267  git add .g
+  268  git add .
+  269  git commit -m "completed the backend"
+  270  git push -u origin main
+  271  cd ..
+  272  cd portfolio
+  273  ls
+  274  code .
+  275  sudo npm run dev
+  276  ls
+  277  cd ..
+  278  cd portfolio
+  279  ls
+  280  sudo npm run dev
+  281  cd
+  282  cd Desktop
+  283  cd portfolio
+  284  ls
+  285  sudo npm install next-themes
+  286  git add .
+  287  git commit -m "initiated the frontend"
+  288  git push -u origin main
+  289  sudo npm i react-icons
+  290  git add .
+  291  git commit -m "completed"
+  292  git push -u origin main
+  293  git add .
+  294  git commit -m "add the dynamic page for project"
+  295  git push -u origin main
+  296  git add .
+  297  git commit -m "completed"
+  298  git push -u origin main
+  299  cd Desktop/portfolio
+  300  code .
+  301  sudo npm run dev
+  302  cd ..
+  303  cd portfolio_backend
+  304  ls
+  305  code .
+  306  sudo npm run dev
+  307  git add .
+  308  git commit -m "completed"
+  309  git push -u origin main
+  310  sudo npm i motion-framer
+  311  ls
+  312  sudo npm i framer-motion
+  313  git add .
+  314  git commit -m "initiated"
+  315  git push -u origin main
+  316  code .
+  317  git add .
+  318  git commit -m "Energy MERN application"
+  319  git push -u origin main
+  320  git add .
+  321  git commit -m "Energy MERN application"
+  322  git push -u origin main
+  323  git add .
+  324  git commit -m "Energy MERN application"
+  325  git push -u origin main
+  326  git add .
+  327  git commit -m "completed"
+  328  git push -u origin main
+  329  cd Desktop
+  330  ls
+  331  mkdir NPTC
+  332  ls
+  333  sntp
+  334  cd NTP
+  335  ls
+  336  cd NTPC
+  337  mkdir ntpc
+  338  cd ntpc
+  339  ls
+  340  code .
+  341  sudo npm init
+  342  ls
+  343  sudo rm -r package.json
+  344  git clone https://github.com/PradeepSahhu/PortfolioBackend.git
+  345  ls
+  346  cd PortfolioBackend
+  347  ls
+  348  sudo rm -r .git
+  349  mv . ../
+  350  mv src/ ../
+  351  ls
+  352  mv *.js ../
+  353  mv *.json ../
+  354  ls
+  355  cd ..
+  356  ls
+  357  sudo rm -r PortfolioBackend
+  358  ls
+  359  sudo npm i
+  360  sudo npm i pickleparser
+  361  sudo npm install fs-extra
+  362  cd ..
+  363  sudo chmdo 774 ntpc
+  364  sudo chmod -R 774 ntpc
+  365  sudo chmod -r 774 ntpc/
+  366  ls
+  367  sudo chmod -r 774 ntpc/
+  368  sudo chmod -r 774 ntpc
+  369  sudo chmod -r 774 ntpc/
+  370  cd ..
+  371  sudo chmod -R 774 ntpc
+  372  cd ntpc
+  373  ls
+  374  cd src
+  375  cd contorllers
+  376  ls
+  377  model.py
+  378  touch model.py
+  379  cd..
+  380  cd ..
+  381  ls
+  382  git init
+  383  git add .
+  384  touch .gitignore
+  385  git add .
+  386  git commit -m "backend interacting with the pickel file"
+  387  sudo rm -r .git
+  388  git init
+  389  git ad .
+  390  git add .
+  391  git commit -m "backend with the flask"
+  392  git branch -M main
+  393  git remote add origin https://github.com/PradeepSahhu/ntpc-backend.git
+  394  git push -u origin main
+  395  sudo npm i npm i child_process
+  396  sudo npm i child_process
+  397  sudo npm i path
+  398  sudo npm i url
+  399  sudo npm run dev
+  400  clear
+  401  sudo npm run dev
+  402  cd
+  403  cd Desktop
+  404  ls
+  405  mkdir model
+  406  cd model
+  407  ls
+  408  code .
+  409  pip install -r requirements.txt
+  410  python model.py
+  411  python3 model.py
+  412  pip3 install -r requirements.txt
+  413  python3 model.py
+  414  python main.py
+  415  python3 main.py
+  416  pip install requests
+  417  python3 main.py
+  418  cd Desktop
+  419  ls
+  420  cd model
+  421  ls
+  422  code .
+  423  python3 main2.py
+  424  python main2.py
+  425  python3 main2.py
+  426  pip install xgboost
+  427  pip3 install xgboost
+  428  python3 main2.py
+  429  brew install libomp\n
+  430  python3 -c "import xgboost"\n
+  431  python3 main2.py
+  432  flast main.py
+  433  flask main.py
+  434  ls
+  435  flask main.py
+  436  python main.py
+  437  python3 main.py
+  438  cd ..
+  439  git clone https://github.com/Ritvik-project/Energy_forecasting_frontend.git
+  440  cd Energy_forecasting_frontend
+  441  ls
+  442  code .
+  443  sudo npm i
+  444  sudo npm run dev
+  445  sudo npm i react-icons
+  446  sudo npm run dev
+  447  sudo npm i recharts
+  448  sudo npm run dev
+  449  sudo npx shadcn@latest add card\n
+  450  sudo npx shadcn@latest init\n
+  451  cd Desktop
+  452  l
+  453  git clone https://github.com/kumar10248/ntpc.git
+  454  cd ntpc
+  455  ls
+  456  cd ..
+  457  cd Downloads
+  458  git clone https://github.com/kumar10248/ntpc.git
+  459  code ntpc
+  460  cd ..
+  461  cd Desktop
+  462  cd model
+  463  code .
+  464  git pull .
+  465  ls
+  466  git pull
+  467  git pull origin main
+  468  git pull main
+  469  git pull master
+  470  git pull 
+  471  git pull master
+  472  git pull origin master
+  473  cd ..
+  474  sudo rm -r Energy_forecasting_frontend
+  475  ls
+  476  cd Desktop
+  477  git clone https://github.com/Ritvik-project/Energy_forecasting_frontend.git
+  478  cd Energy_forecasting_frontend
+  479  ls
+  480  code .
+  481  sudo npm run dev
+  482  sudo npm i
+  483  sudo npm run dev
+  484  sudo npm i react-icons
+  485  sudo npm run dev
+  486  git log
+  487  cd
+  488  cd Desktop
+  489  ls
+  490  cd model
+  491  ls
+  492  code .
+  493  python modelTrain.py
+  494  python3 modelTrain.py
+  495  ls
+  496  python3 flasking.py
+  497  ipconfig
+  498  ifconfig
+  499  ifconfig env0\n
+  500  ifconfig env0 | grep 'inet ' | awk '{print $2}'\n
+  501  ifconfig en0
+  502  python3 flasking.py
+  503  pip install -U flask-cors
+  504  python3 flasking.py
+  505  git add .
+  506  git init
+  507  git add .
+  508  git commit -m "completed the backend"
+  509  cd ..
+  510  ls
+  511  cd Energy_forecasting_frontend
+  512  ls
+  513  code .
+  514  sudo npm run dev
+  515  git branch -M main
+  516  git remote add origin https://github.com/PradeepSahhu/model-backend.git
+  517  git branch -M main
+  518  git push -u origin main
+  519  git log --oneline
+  520  git push -u origin main
+  521  cd ..
+  522  cp Energy_forecasting_frontend  .
+  523  cp Energy_forecasting_frontend  ../Downloads
+  524  cp Energy_forecasting_frontend/  ../Downloads/
+  525  cp Energy_forecasting_frontend  ../Downloads/
+  526  cp Energy_forecasting_frontend/  ../Downloads/
+  527  cp -r Energy_forecasting_frontend/ ../Downloads
+  528  cp -r Energy_forecasting_frontend/ ../Downloads/Temp
+  529  git pull .
+  530  git pull 
+  531  cd Energy_forecasting_frontend/
+  532  git pull 
+  533  git pull main
+  534  git push -u origin main
+  535  git pull .
+  536  git push -u origin main
+  537  git add .
+  538  git commit -m "completed"
+  539  git push -u origin main
+  540  git push -u origin master
+  541  git pull origin master
+  542  sudo npm run dev
+  543  git pull origin master
+  544  git pull origin master --force
+  545  git pull origin master
+  546  git pull origin master 
+  547  git pull origin master --force
+  548  git push -u origin main
+  549  git add .
+  550  git commit -m "completed"
+  551  git push -u origin main
+  552  git pull origin master
+  553  git push -u origin master
+  554  git pull .
+  555  git pull master
+  556  git pull origin master
+  557  sudo npm run dev
+  558  cd Desktop
+  559  cd ..
+  560  cd Downloads
+  561  git clone https://github.com/Ritvik-project/Energy_forecasting_frontend.git
+  562  git Energy_forecasting_frontend
+  563  ls
+  564  cd Energy_forecasting_frontend
+  565  ls
+  566  sudo npm i
+  567  sudo rm -r .git
+  568  ls
+  569  sudo npm run dev
+  570  sudo npm i react-icons
+  571  sudo npm run dev
+  572  code .
+  573  git add .
+  574  git init
+  575  git add .
+  576  git commit -m "completed"
+  577  git remote add origin https://github.com/PradeepSahhu/hack-frontend.git
+  578  git push -u origin main
+  579  git branch -M main
+  580  git push -u origin main
+  581  git add .
+  582  git commit -m "completed"
+  583  git push -u origin main
+  584  sudo npm run build
+  585  git add .
+  586  git commit -m "completed"
+  587  git push -u origin main
+  588  git add .
+  589  git commit -m "completed"
+  590  git push -u origin main
+  591  sudo npm run build
+  592  sudo npm run dev
+  593  git add .
+  594  git commit -m "completed"
+  595  git push -u origin main
+  596  git add .
+  597  git commit -m "completed"
+  598  git push -u origin main
+  599  git add .
+  600  git commit -m "completed"
+  601  git push -u origin main
+  602  git add .
+  603  git commit -m "completed"
+  604  git push -u origin main
+  605  sudo npm run dev
+  606  git add .
+  607  git commit -m "completed"
+  608  git push -u origin main
+  609  git add .g
+  610  git add .
+  611  git commit -m "completed"
+  612  git push -u origin main
+  613  sudo npm run dev
+  614  sudo npm build
+  615  sudo npm run build
+  616  git add .g
+  617  git add .
+  618  git commit -m "completed"
+  619  git push -u origin main
+  620  vite build
+  621  sudo npm i
+  622  sudo npm run build
+  623  git add .
+  624  git push -u origin main
+  625  git commit -m "completed"
+  626  git push -u origin main
+  627  git add .
+  628  git commit -m "completed"
+  629  git push -u origin main
+  630  git add .
+  631  git commit -m "completed"
+  632  git push -u origin main
+  633  git add .
+  634  git commit -m "completed"
+  635  git push -u origin main
+  636  git add .
+  637  git commit -m "completed"
+  638  git push -u origin main
+  639  npm i -g vercel\nvercel init vite\nVercel CLI\nSuccess! Initialized "vite" example in ~/first\n- To deploy, `cd vite` and run `vercel`.
+  640  clear
+  641  git add .
+  642  git commit -m "completed"
+  643  git push -u origin main
+  644  cd Desktop
+  645  cd model
+  646  ls
+  647  code .
+  648  python3 flasking.py
+  649  ngrok http 5001\n
+  650  ngrok http https://localhost:5001\n
+  651  cd
+  652  cd Desktop
+  653  cd Energy_forecasting_frontend
+  654  sudo npm run dev
+  655  cd ..
+  656  cd Downloads
+  657  cd Temp
+  658  ls
+  659  sudo npm i
+  660  sudo npm run dev
+  661  sudo npm i
+  662  sudo npm run dev
+  663  python3 flasking.py
+  664  cd
+  665  cd Desktop
+  666  ls
+  667  cd Energy_forecasting_frontend
+  668  ls
+  669  cd ..
+  670  sudo rm -r Energy_forecasting_frontend
+  671  git clone https://github.com/Ritvik-project/Energy_forecasting_frontend.git
+  672  cd Energy_forecasting_frontend
+  673  ls
+  674  sudo npm i
+  675  cd Desktop
+  676  mkdir numpy
+  677  cd numpy
+  678  python3 -m venv .venv
+  679  source .venv/bin/activate
+  680  code .
+  681  /usr/local/bin/python3.11 /Users/pradeepsahu/.vscode/extensions/ms-python.python-2025.0.0-darwin-arm64/python_files/printEnvVariablesToFile.py /Users/pradeepsahu/.vscode/extensions/ms-python.python-2025.0.0-darwin-arm64/python_files/deactivate/zsh/envVars.txt
+  682  source .venv/bin/activate
+  683  deactivate
+  684  code .
+  685  /usr/local/bin/python3.11 /Users/pradeepsahu/.vscode/extensions/ms-python.python-2025.0.0-darwin-arm64/python_files/printEnvVariablesToFile.py /Users/pradeepsahu/.vscode/extensions/ms-python.python-2025.0.0-darwin-arm64/python_files/deactivate/zsh/envVars.txt
+  686  source .env/bin/activate
+  687  pip install numpy
+  688  pip install --upgrade pip
+  689  cd Desktop
+  690  cd placement_DSA
+  691  ls
+  692  mkdir practice
+  693  cd practice
+  694  ls
+  695  code .
+  696  cd
+  697  cd Desktop
+  698  ls
+  699  cd numpy
+  700  ls
+  701  python -m venv .venv
+  702  code .
+  703  cd ..
+  704  cd placement_DSA
+  705  ls
+  706  cd geeksforgeeks
+  707  ls
+  708  code .
+  709  cd "/Users/pradeepsahu/Desktop/placement_DSA/geeksforgeeks/" && g++ -std=c++11 longestStringChain.cpp -o longestStringChain && "/Users/pradeepsahu/Desktop/placement_DSA/geeksforgeeks/"longestStringChain
+  710  python -u "/Users/pradeepsahu/Desktop/numpy/phase-2.ipynb"
+  711  pip install matplotlib
+  712  /usr/local/bin/python3.11 /Users/pradeepsahu/.vscode/extensions/ms-python.python-2025.0.0-darwin-arm64/python_files/printEnvVariablesToFile.py /Users/pradeepsahu/.vscode/extensions/ms-python.python-2025.0.0-darwin-arm64/python_files/deactivate/zsh/envVars.txt
+  713  cd Desktop
+  714  ls
+  715  cd numpy
+  716  ls
+  717  code .
+  718  /usr/local/bin/python3.11 /Users/pradeepsahu/.vscode/extensions/ms-python.python-2025.2.0-darwin-arm64/python_files/printEnvVariablesToFile.py /Users/pradeepsahu/.vscode/extensions/ms-python.python-2025.2.0-darwin-arm64/python_files/deactivate/zsh/envVars.txt
+  719  cd ..
+  720  ls
+  721  cd placement_DSA
+  722  ls
+  723  cd geeksforgeeks
+  724  ls
+  725  code .
+  726  cd "/Users/pradeepsahu/Desktop/placement_DSA/geeksforgeeks/" && g++ -std=c++11 fibMemoization.cpp -o fibMemoization && "/Users/pradeepsahu/Desktop/placement_DSA/geeksforgeeks/"fibMemoization
+  727  cd "/Users/pradeepsahu/Desktop/placement_DSA/geeksforgeeks/" && g++ -std=c++11 longestcommonSubsequence.cpp -o longestcommonSubsequence && "/Users/pradeepsahu/Desktop/placement_DSA/geeksforgeeks/"longestcommonSubsequence
+  728  cd ..
+  729  cd numpy
+  730  ls
+  731  code .
+  732  /usr/local/bin/python3.11 /Users/pradeepsahu/.vscode/extensions/ms-python.python-2025.2.0-darwin-arm64/python_files/printEnvVariablesToFile.py /Users/pradeepsahu/.vscode/extensions/ms-python.python-2025.2.0-darwin-arm64/python_files/deactivate/zsh/envVars.txt
+  733  cd Desktop
+  734  cd portfolio
+  735  ls
+  736  code .
+  737  sudo npm run dev
+  738  git add .
+  739  git commit -m "completed"
+  740  git push -u origin main
+  741  git add .
+  742  git commit -m "completed"
+  743  git push -u origin main
+  744  git add .
+  745  git commit -m "completed"
+  746  git push -u origin main
+  747  sudo npm install motion
+  748  git add .
+  749  git commit -m "completed"
+  750  git push -u origin main
+  751  cd ..
+  752  cd portfolio_backend
+  753  ls
+  754  code .
+  755  cd ..
+  756  cd Rust
+  757  ls
+  758  code .
+  759  cd Desktop
+  760  cd placement_DSA
+  761  ls
+  762  cd amcat_dsa
+  763  ls
+  764  code .
+  765  cd "/Users/pradeepsahu/Desktop/placement_DSA/amcat_dsa/" && g++ -std=c++11 vectorToBFSReverse.cpp -o vectorToBFSReverse && "/Users/pradeepsahu/Desktop/placement_DSA/amcat_dsa/"vectorToBFSReverse
+  766  cd Desktop
+  767  mkdir DSA
+  768  mkdir Algorithms
+  769  cd Algorithms
+  770  ls
+  771  code .
+  772  cd "/Users/pradeepsahu/Desktop/Algorithms/Strings/" && g++ -std=c++11 reverse_recursino.cpp -o reverse_recursino && "/Users/pradeepsahu/Desktop/Algorithms/Strings/"reverse_recursino
+  773  cd ..
+  774  ls
+  775  cd wisePayment
+  776  ls
+  777  touch vercel.json
+  778  code vercel.json
+  779  code .
+  780  git add .
+  781  git commit -m "Deplyable vercel.json"
+  782  git push -u origin main
+  783  git add .
+  784  git commit -m "Deplyable vercel.json"
+  785  git push -u origin main
+  786  sudo npm run dev
+  787  git add .
+  788  git commit -m "Deplyable vercel.json"
+  789  git push -u origin main
+  790  sudo npm run dev
+  791  git add .
+  792  git push -u origin main
+  793  git commit -m "Deplyable vercel.json"
+  794  git push -u origin main
+  795  sudo npm run dev
+  796  git add .
+  797  git commit -m "Deplyable vercel.json"
+  798  git push -u origin main
+  799  git add .
+  800  git commit -m "completed"
+  801  git push -u origin main
+  802  sudo npm run dev
+  803  git add .
+  804  git commit -m "added todos"
+  805  git push -u origin main
+  806  cd "/Users/pradeepsahu/Desktop/Algorithms/Strings/" && g++ -std=c++11 mergeSort.cpp -o mergeSort && "/Users/pradeepsahu/Desktop/Algorithms/Strings/"mergeSort
+  807  cd Desktop
+  808  ls
+  809  cd static/Staticpe
+  810  ls
+  811  code .
+  812  sudo npm run build
+  813  sudo npm run dev
+  814  sudo npm run build
+  815  cd ..
+  816  cd DSA
+  817  code .
+  818  cd .
+  819  cd 
+  820  cd ..
+  821  cd usr
+  822  ls
+  823  cd ..
+  824  ls
+  825  cd Users
+  826  ls
+  827  cd pradeepsahu
+  828  ls
+  829  cd eclipse-workspace
+  830  ls
+  831  cd chat
+  832  ls
+  833  cd demo
+  834  ls
+  835  code .
+  836  cd "/Users/pradeepsahu/eclipse-workspace/chat/demo/src/main/java/com/example/demo/" && javac DemoApplication.java && java DemoApplication
+  837  cd ..
+  838  cd Desktop
+  839  ls
+  840  mkdir ContestHub
+  841  sudo rm -r ContestHub
+  842  npx create-next-app@latest
+  843  sudo npx create-next-app@latest
+  844  cd contesthub
+  845  ls
+  846  code .
+  847  cd ..
+  848  sudo chmod -R 774 contesthub
+  849  cd contesthub
+  850  sudo rm -r .git
+  851  git init
+  852  git add .
+  853  git commit -m "initlized Project"
+  854  git branch -M main\ngit remote add origin https://github.com/PradeepSahhu/contestHub.git\ngit push -u origin main
+  855  sudo npm run dev
+  856  sudo npm install axios moment react-icons @shadcn/ui\n
+  857  sudo npm run dev
+  858  npx shadcn-ui@latest init\n
+  859  sudo npx shadcn-ui@latest init\n
+  860  sudo npx shadcn-ui@latest add card button\n
+  861  sudo npx shadcn@latest add card button
+  862  sudo npm run dev
+  863  git add .
+  864  git config --global --add safe.directory /Users/pradeepsahu/Desktop/contesthub
+  865  git add .
+  866  git commit -m "project initiated"
+  867  git branch -M main\ngit remote add origin https://github.com/PradeepSahhu/contestHub.git\ngit push -u origin main
+  868  cd ..
+  869  cd static/Staticpe
+  870  ls
+  871  git add .
+  872  git commit -m "few bugs fixed"
+  873  git push -u origin main
+  874  git push -u origin development
+  875  cd Desktop
+  876  ls
+  877  cd Desktop
+  878  cd Energy_forecasting_frontend
+  879  ls
+  880  code .
+  881  sudo npm run dev
+  882  sudo npm i react-icons
+  883  sudo npm run dev
+  884  git add .
+  885  ls
+  886  cd ..
+  887  cd Energy_forecasting_frontend
+  888  ls
+  889  git add .
+  890  cd Desktop
+  891  npx create-next-app@latest hack-o-oct
+  892  sudo npx create-next-app@latest hack-o-oct
+  893  cd hack-o-oct
+  894  ls
+  895  cd ..
+  896  sudo chmod -R 774 hack-o-oct
+  897  cd ha
+  898  cd hack-o-oct
+  899  sudo rm -r .git
+  900  git init
+  901  git add .
+  902  git config --global --add safe.directory /Users/pradeepsahu/Desktop/hack-o-oct
+  903  git add .
+  904  git commit -m "first commit"\ngit branch -M main\ngit remote add origin https://github.com/PradeepSahhu/LearningAI.git\ngit push -u origin main
+  905  git branch master
+  906  git checkout master
+  907  ls
+  908  git add .
+  909  git commit -m "initialized"
+  910  git push -u origin master
+  911  cd Desktop
+  912  ls
+  913  cd wisePayment
+  914  ls
+  915  code .
+  916  sudo npm run dev
+  917  cd Desktop
+  918  ls
+  919  cd MyDSA
+  920  ls
+  921  code .
+  922  cd "/Users/pradeepsahu/Desktop/MyDSA/" && g++ -std=c++11 minimumComputer.cpp -o minimumComputer && "/Users/pradeepsahu/Desktop/MyDSA/"minimumComputer
+  923  cd Desktop
+  924  ls
+  925  cd MyDSA
+  926  ls
+  927  code .
+  928  cd "/Users/pradeepsahu/Desktop/MyDSA/" && g++ -std=c++11 threeSum.cpp -o threeSum && "/Users/pradeepsahu/Desktop/MyDSA/"threeSum
+  929  cd ..
+  930  git clone https://github.com/PradeepSahhu/ETH-ADVANCE.git
+  931  cd ETH-ADVANCE
+  932  ls
+  933  cd d-app
+  934  sudo npm i
+  935  sudo  npm audit fix --force
+  936  code .
+  937  sudo npm run dev
+  938  sudo npm run build
+  939  sudo npm run dev
+  940  cd ..
+  941  sudo chmod -R 774 d-app
+  942  sudo npm run build
+  943  sudo npm i
+  944  sudo npm run build
+  945  grep -rnw  -e 'document'\n
+  946  sudo npm run build
+  947  sudo rm -rf .next\n
+  948  sudo npm run build
+  949  cd ..
+  950  sudo rm -r ETH-ADVANCE
+  951  git clone https://github.com/PradeepSahhu/SmartContractsWallet.git
+  952  cd SmartContractsWallet
+  953  code .
+  954  ls
+  955  cd smartcontractwallet
+  956  ls
+  957  sudo npm i
+  958  sudo npm run build
+  959  sudo npm run dev
+  960  sudo npm i web3modal
+  961  sudo npm i
+  962  sudo npm run dev
+  963  cd ..
+  964  sudo rm 0r SmartContractsWallet
+  965  sudo rm -r SmartContractsWallet
+  966  cd Desktop
+  967  ls
+  968  mkdir hack-o-oct-speech
+  969  cd hack-o-oct-speech
+  970  ls
+  971  code .
+  972  python -m .venv venv
+  973  python -m venv venv
+  974  source  venv/bin/activate
+  975  pip install speechrecognition pyttsx3 requests pydub\nbrew install ffmpeg  # (for macOS/Linux, needed for pydub)\n
+  976  python speech.py
+  977  python3 speech.py
+  978  pip install speechrecognition pyttsx3 requests pydub\nbrew install ffmpeg  # (for macOS/Linux, needed for pydub)\n
+  979  pip install pyaudio\n
+  980  pip install --upgrade pip setuptools wheel\npip install pyaudio\n
+  981  pip install pyaudio --global-option="build_ext" --global-option="-I$(brew --prefix portaudio)/include" --global-option="-L$(brew --prefix portaudio)/lib"\n
+  982  CFLAGS="-I$(brew --prefix portaudio)/include" LDFLAGS="-L$(brew --prefix portaudio)/lib" pip install pyaudio\n
+  983  pip install pyaudio\n
+  984  brew remove portaudio\nbrew install portaudio\npip3 install pyaudio
+  985  pip install pyaudio\n
+  986  python3 speech.py
+  987  python3 availableVoices.py
+  988  python3 speech.py
+  989  python3 sSpeech.py
+  990  pip install edge-tts\n
+  991  python3 tSpeech.py
+  992  python3 sSpeech.py
+  993  cd ..
+  994  code .
+  995  git init
+  996  git add .
+  997  git branch -M main
+  998  git commit -m "complted"
+  999  git remote add origin https://github.com/PradeepSahhu/hack-o-Oct-All.git
+ 1000  git push -u origin main
+ 1001  cd Desktop
+ 1002  ls
+ 1003  cd portfolio
+ 1004  ls
+ 1005  code .
+ 1006  sudo npm run dev
+ 1007  git add .
+ 1008  git commit -m "added the project loading page"
+ 1009  git push -u origin main
+ 1010  cd ..
+ 1011  ls
+ 1012  cd portfolio
+ 1013  ls
+ 1014  code .
+ 1015  sudo npm install styled-components\n
+ 1016  sudo npm run dev
+ 1017  git add .
+ 1018  git commit -m "added the project loading page"
+ 1019  git push -u origin main
+ 1020  cd Desktop
+ 1021  ls
+ 1022  cd MyDSA
+ 1023  ls
+ 1024  code .
+ 1025  cd "/Users/pradeepsahu/Desktop/MyDSA/" && g++ -std=c++11 waterTapping.cpp -o waterTapping && "/Users/pradeepsahu/Desktop/MyDSA/"waterTapping
+ 1026  cd Desktop
+ 1027  l
+ 1028  cd React-Redux-Applicatino
+ 1029  ls
+ 1030  code .
+ 1031  cd passingchildren
+ 1032  ls
+ 1033  sudo npm run dev
+ 1034  cd ,,
+ 1035  cd ..
+ 1036  git clone https://github.com/PradeepSahhu/CodeAnt_AI.git
+ 1037  cd CodeAnt_AI
+ 1038  ls
+ 1039  code .
+ 1040  git log
+ 1041  git checkout 9eef9d1e36a60e93840667bab0b616dc0805254b
+ 1042  sudo npm run dev
+ 1043  sudo npm i
+ 1044  sudo npm run dev
+ 1045  git checkout main
+ 1046  sudo npm run dev
+ 1047  git checkout 9eef9d1e36a60e93840667bab0b616dc0805254b
+ 1048  git checkout 9eef9d1e36a60e93840667bab0b616dc0805254b --force
+ 1049  sudo npm run dev
+ 1050  git checkout main
+ 1051  sudo npm run dev
+ 1052  git checkout main
+ 1053  sudo npm run dev
+ 1054  git add .
+ 1055  git commit -m "fixed images"
+ 1056  git push -u origin main
+ 1057  sudo npm run dev
+ 1058  code .
+ 1059  sudo npm run dev
+ 1060  git add .
+ 1061  git commit -m "fixed the images"
+ 1062  git push -u origin main
+ 1063  git add .
+ 1064  git commit -m "fixed the images"
+ 1065  git push -u origin main
+ 1066  cd ..
+ 1067  sudo rm -r CodeAnt_AI
+ 1068  cd ..
+ 1069  ls
+ 1070  cd Desktop
+ 1071  cd portfolio
+ 1072  l
+ 1073  code .
+ 1074  sudo npm run dev
+ 1075  git add .
+ 1076  git commit -m "added the edit and add project pages"
+ 1077  git push -u originmain
+ 1078  git push -u origin main
+ 1079  \nDFX_VERSION=0.9.3 sh -ci "$(curl -fsSL https://sdk.dfinity.org/install.sh)"
+ 1080  \ndfx new hello
+ 1081  cd Desktop
+ 1082  mkdir ic-project
+ 1083  source "$HOME/Library/Application Support/org.dfinity.dfx/env
+ 1084  source "$HOME/Library/Application Support/org.dfinity.dfx/env"
+ 1085  \ndfx new hello
+ 1086  ls
+ 1087  cd hello
+ 1088  ls
+ 1089  cd ..
+ 1090  sudo rm -r hello
+ 1091  cd ic-project
+ 1092  ls
+ 1093  sudo\ndfx new start
+ 1094  ls
+ 1095  cd start
+ 1096  ls
+ 1097  dfx start
+ 1098  code .
+ 1099  dfx deploy
+ 1100  dfs --version
+ 1101  sudo chown -R 501:20 "/Users/pradeepsahu/.npm"
+ 1102  ls
+ 1103  node -version
+ 1104  node -v
+ 1105  ls
+ 1106  cd ..
+ 1107  sudo rm -r start
+ 1108  sudo\ndfx new start
+ 1109  ls
+ 1110  cd start
+ 1111  dfx help
+ 1112  code .
+ 1113  dfs -v
+ 1114  node -version
+ 1115  node -v
+ 1116  node --version
+ 1117  cd
+ 1118  vim .zshrc
+ 1119  dfs -v
+ 1120  dfs --versino
+ 1121  dfs --version
+ 1122  vim .zshrc
+ 1123  source ~/.zshrc\n
+ 1124  dfs -v
+ 1125  dfs --version
+ 1126  dfx --version\n
+ 1127  dfx --version
+ 1128  \ndfx deploy
+ 1129  dfx start
+ 1130  dfx deploy
+ 1131  \nnpm start
+ 1132  ls
+ 1133  npm uninstall webpack webpack-cli\nnpm install webpack webpack-cli --save-dev\n
+ 1134  npx webpack --version\nnpx webpack-cli --version\n
+ 1135  npm start\n
+ 1136  dfx deploy
+ 1137  dfx start
+ 1138  dfx --version
+ 1139  cd Desktop
+ 1140  ls
+ 1141  cd ic-project
+ 1142  ls
+ 1143  sudo rm -r start
+ 1144  dfx new hello
+ 1145  code .
+ 1146  cd hello
+ 1147  code .
+ 1148  dfx start
+ 1149  dfx deploy
+ 1150  npm start
+ 1151  npm install --save-dev webpack-cli\nnpm upgrade --save-dev webpack-cli
+ 1152  npm start
+ 1153  cd ..
+ 1154  sudo rm -r hello
+ 1155  sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
+ 1156  source "$HOME/Library/Application Support/org.dfinity.dfx/env"
+ 1157  dfx --version
+ 1158  dfx new hello
+ 1159  dfx start
+ 1160  ls
+ 1161  cd hello
+ 1162  dfx start
+ 1163  dfx deploy
+ 1164  npm start
+ 1165  dfx start
+ 1166  dfx deploy
+ 1167  dfx start
+ 1168  dfx deploy
+ 1169  dfx start
+ 1170  dfx deploy
+ 1171  dfx canister call hello topUp()
+ 1172  dfx canister call hello topUp();
+ 1173  dfx canister call hello 'topUp()'
+ 1174  cd ..
+ 1175  dfx canister call hello 'topUp()'
+ 1176  cd hello
+ 1177  ls
+ 1178  dfx canister call hello_backend 'topUp()'
+ 1179  dfx canister call hello_backend 'topUp'
+ 1180  dfx canister call hello_backend 'topUp()'
+ 1181  dfx canister call hello_backend topUp
+ 1182  dfx canister call hello topUp
+ 1183  dfx canister list\n
+ 1184  cat dfx.json | jq '.canisters | keys'\n
+ 1185  dfx canister call hello_backend topUp\n
+ 1186  dfx canister call hello_backend 'topUp'\n
+ 1187  dfx start
+ 1188  dfx deploy
+ 1189  dfx canister call hello_backend 'topUp'\n
+ 1190  code .
+ 1191  ls
+ 1192  cd ..
+ 1193  ls
+ 1194  ls hello
+ 1195  code .
+ 1196  ls
+ 1197  sudo rm -r hello
+ 1198  ls
+ 1199  dfx new hello
+ 1200  git init\ngit add README.md\ngit commit -m "first commit"\ngit branch -M main\ngit remote add origin https://github.com/PradeepSahhu/ICP-Development.git\ngit push -u origin main
+ 1201  ls
+ 1202  git init\ngit add .\ngit commit -m "first commit"\ngit branch -M main\ngit remote add origin https://github.com/PradeepSahhu/ICP-Development.git\ngit push -u origin main
+ 1203  cd hello
+ 1204  ls
+ 1205  code .
+ 1206  dfx start
+ 1207  dfx deploy
+ 1208  cd ..
+ 1209  git add .
+ 1210  sudo rm -r .git
+ 1211  git init
+ 1212  \ngit add .\ngit commit -m "first commit"\ngit branch -M main\ngit remote add origin https://github.com/PradeepSahhu/ICP-Development.git\ngit push -u origin main
+ 1213  \ngit add .\ngit commit -m "first commit"\ngit branch -M main\ngit remote add origin https://github.com/PradeepSahhu/ICP-Development.git\ngit push -u origin main --force
+ 1214  cd hello
+ 1215  sudo rm -r .git
+ 1216  cd ..
+ 1217  \ngit add .\ngit commit -m "first commit"\ngit branch -M main\ngit remote add origin https://github.com/PradeepSahhu/ICP-Development.git\ngit push -u origin main --force
+ 1218  git push -u origin main
+ 1219  git add .\ngit commit -m "first commit"\ngit branch -M main\ngit remote add origin https://github.com/PradeepSahhu/ICP-Projects.git\ngit push -u origin main --force
+ 1220  sudo -r .git
+ 1221  sudo rm -r .git
+ 1222  git add .\ngit commit -m "first commit"\ngit branch -M main\ngit remote add origin https://github.com/PradeepSahhu/ICP-Projects.git\ngit push -u origin main --force
+ 1223  git init
+ 1224  git add .\ngit commit -m "first commit"\ngit branch -M main\ngit remote add origin https://github.com/PradeepSahhu/ICP-Projects.git\ngit push -u origin main --force
+ 1225  dfx canister id __Candid_UI
+ 1226  dfx deploy
+ 1227  dfx canister id __Candid_UI
+ 1228  dfx canister id b77ix-eeaaa-aaaaa-qaada-cai
+ 1229  dfx canister id canister
+ 1230  dfx canister id hello_backend
+ 1231  dfx deploy
+ 1232  cd ..
+ 1233  git add .
+ 1234  git commit -m "initialized"
+ 1235  git push -u origin main
+ 1236  dfx start
+ 1237  dfx deploy
+ 1238  cd hello
+ 1239  dfx deploy
+ 1240  dfx start
+ 1241  cd hello
+ 1242  ls
+ 1243  npm start
+ 1244  dfx deploy
+ 1245  cd
+ 1246  cd Desktop
+ 1247  cd placement_DSA
+ 1248  s
+ 1249  ls
+ 1250  cd contest
+ 1251  ls
+ 1252  code .
+ 1253  cd Desktop
+ 1254  ls
+ 1255  cd ic-project
+ 1256  ls
+ 1257  cd hello
+ 1258  ls
+ 1259  code .
+ 1260  cd ..
+ 1261  cd placement_DSA
+ 1262  ls
+ 1263  mkdir classes
+ 1264  cd classes
+ 1265  ls
+ 1266  code .
+ 1267  cd "/Users/pradeepsahu/Desktop/placement_DSA/classes/" && g++ -std=c++11 subsetRecursion.cpp -o subsetRecursion && "/Users/pradeepsahu/Desktop/placement_DSA/classes/"subsetRecursion
+ 1268  cd .
+ 1269  cd
+ 1270  cd Desktop
+ 1271  ls
+ 1272  cd React-Redux-Applicatino
+ 1273  ls
+ 1274  npx create-next-app@latest
+ 1275  cd mantine-project
+ 1276  ls
+ 1277  sudo npm i
+ 1278  ls
+ 1279  code .
+ 1280  npm install @mantine/core @mantine/hooks
+ 1281  npm install --save-dev postcss postcss-preset-mantine postcss-simple-vars
+ 1282  sudo npm run dev
+ 1283  npm install sass
+ 1284  npm install sass\n
+ 1285  sudo npm run dev
+ 1286  npm install @mantinex/mantine-logo
+ 1287  npm i @tabler/icons-react
+ 1288  cd ..
+ 1289  git add .
+ 1290  cd ..
+ 1291  git init
+ 1292  git add .
+ 1293  git commit -m "react-redux"
+ 1294  git branch -M main
+ 1295  git remote add origin https://github.com/PradeepSahhu/react-redux.git
+ 1296  git push -u origin main
+ 1297  cd
+ 1298  cd Desktop
+ 1299  ls
+ 1300  ssh -i "web.pem" ubuntu@ec2-54-210-119-36.compute-1.amazonaws.com
+ 1301  ls grep -iH "web.pem"
+ 1302  cd ..
+ 1303  cd Documents
+ 1304  ls grep -iH "web.pem"
+ 1305  cd ..
+ 1306  cd Downloads
+ 1307  ls grep -iH "web.pem"
+ 1308  cd ..
+ 1309  cd Desktop
+ 1310  cd awS
+ 1311  ls
+ 1312  cd ..
+ 1313  ls -r grep -iH "web.pem"
+ 1314  cd ..
+ 1315  cd Documents
+ 1316  ls
+ 1317  cd ..
+ 1318  cd Downloads
+ 1319  ls
+ 1320  cd ..
+ 1321  ls -r grep -iH "web.pem"
+ 1322  ls -R grep -iH "web.pem"
+ 1323  cd Desktop
+ 1324  ssh -i "tween-dev-prod.pem" ubuntu@ec2-98-80-118-223.compute-1.amazonaws.com
+ 1325  cd Desktop
+ 1326  cd React-Redux-Applicatino
+ 1327  ls
+ 1328  cd mantine-project
+ 1329  ls
+ 1330  sudo npm run dev
+ 1331  code .
+ 1332  sudo npm run dev
+ 1333  ssh -i "tween-dev-prod.pem" ubuntu@ec2-98-80-118-223.compute-1.amazonaws.com
+ 1334  clear
+ 1335  ssh -i "tween-dev-prod.pem" ubuntu@ec2-98-80-118-223.compute-1.amazonaws.com
+ 1336  ssh -i "tween-dev-nvir.pem" ubuntu@ec2-54-164-18-141.compute-1.amazonaws.com
+ 1337  clear
+ 1338  ssh -i "tween-dev-nvir.pem" ubuntu@ec2-54-164-18-141.compute-1.amazonaws.com
+ 1339  cd Desktop
+ 1340  ls
+ 1341  ssh -i "tween-dev-nvir.pem" ubuntu@ec2-54-164-18-141.compute-1.amazonaws.com
+ 1342  clear
+ 1343  cd aws
+ 1344  ssh -i "March_Production.pem" ubuntu@ec2-54-173-19-194.compute-1.amazonaws.com
+ 1345  cd Desktop/AWS
+ 1346  ls
+ 1347  ssh -i "March_Production.pem" ubuntu@ec2-98-82-9-112.compute-1.amazonaws.com
+ 1348  chmod 400 "March_Production.pem"
+ 1349  ssh -i "March_Production.pem" ubuntu@ec2-98-82-9-112.compute-1.amazonaws.com
+ 1350  curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"\nsudo installer -pkg AWSCLIV2.pkg -target /
+ 1351  which aws\naws --version
+ 1352  chmod 400 "Main-SSH-Dev.pem"
+ 1353  ssh -i "Main-SSH-Dev.pem" ubuntu@ec2-3-91-199-111.compute-1.amazonaws.com
+ 1354  ssh -i Main-SSH-Dev.pem ubuntu@3.91.199.111
+ 1355  ssh -i "Main-SSH-Dev.pem" ubuntu@ec2-3-91-199-111.compute-1.amazonaws.com
+ 1356  ssh -i Main-SSH-Dev.pem ubuntu@3.91.199.111
+ 1357  aws --version
+ 1358  clear
+ 1359  aws configure
+ 1360  ls ~/.aws/
+ 1361  cat ~/.aws/config
+ 1362  cat ~/.aws/credentials
+ 1363  aws sts get-caller-identity
+ 1364  aws ec2 describe-instsances
+ 1365  aws ec2 describe-images --owners amazon --filters "Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-*-*-*" "Name=architecture,Values=x86_64" --query 'Images[*].[ImageId,Name]' --output table\n
+ 1366  aws ec2 run-instances \\n    --image-id ami-007f35e81392786a4 \\n    --count 1 \\n    --instance-type t2.micro \\n    --key-name Main-SSH-Dev \\n    --security-group-ids sg-03462ce0df35ad99f \\n    --query 'Instances[0].InstanceId' \\n    --output text\n
+ 1367  aws ec2 describe-instances \\n    --query 'Reservations[*].Instances[*].[InstanceId,Tags[?Key==`Name`].Value]' \\n    --output table\n
+ 1368  aws ec2 describe-instances \\n    --query 'Reservations[*].Instances[*].[InstanceId, Tags[?Key==`Name`]|[0].Value]' \\n    --output table\n
+ 1369  ls
+ 1370  ssh -i Main-SSH-Dev.pem ubuntu@54.157.40.150
+ 1371  clear
+ 1372  brew tap hashicorp/tap\nbrew install hashicorp/tap/terraform
+ 1373  terraform -v
+ 1374  cd Desktop
+ 1375  cd aws
+ 1376  mkdir terraform-aws-application
+ 1377  cd terraform-aws-application
+ 1378  code .
+ 1379  terraform init\n
+ 1380  terraform plan\n
+ 1381  terraform validate\n
+ 1382  terraform plan\n
+ 1383  aws ec2 describe-security-groups --query "SecurityGroups[*].[GroupId, GroupName]" --output table\n
+ 1384  aws ec2 describe-subnets --query "Subnets[*].[SubnetId, AvailabilityZone, VpcId]" --output table\n
+ 1385  terraform init\nterraform plan\nterraform apply -auto-approve\n
+ 1386  aws ec2 describe-subnets --subnet-ids subnet-082fdada8c7dd97f5 --region us-east-1\n
+ 1387  terraform init\nterraform plan\nterraform apply -auto-approve\n
+ 1388  \nterraform plan\nterraform apply -auto-approve\n
+ 1389  aws configure get region\n
+ 1390  terraform refresh\nterraform plan\n
+ 1391  terraform console\n
+ 1392  terraform plan
+ 1393  terraform apply
+ 1394  terraform output\n
+ 1395  terraform output
+ 1396  terraform console
+ 1397  ls
+ 1398  cd ..
+ 1399  ls
+ 1400  ls -la
+ 1401  aws --version
+ 1402  terraform --version
+ 1403  aws --version
+ 1404  terraform init
+ 1405  ls
+ 1406  cd terraform-aws-application
+ 1407  ls
+ 1408  clear
+ 1409  terraform --version
+ 1410  aws --version
+ 1411  terraform init
+ 1412  terraform plan
+ 1413  terraform init
+ 1414  terraform plan
+ 1415  terraform deploy
+ 1416  terraform apply
+ 1417  terraform output\n
+ 1418  clear
+ 1419  quit
+ 1420  exit
+ 1421  cd Desktop
+ 1422  cd ic-project/
+ 1423  ls
+ 1424  cd ..
+ 1425  cd React-Redux-Applicatino
+ 1426  ls
+ 1427  cd mantine-project
+ 1428  ls
+ 1429  code .
+ 1430  sudo npm run dev
+ 1431  cd mantine-project
+ 1432  ls
+ 1433  sudo npm run dev
+ 1434  npm i dayjs
+ 1435  git add .
+ 1436  git commit -m "added few more components"
+ 1437  git push -u origin main
+ 1438  cd ..
+ 1439  git push -u origin main
+ 1440  git add .
+ 1441  git commit -m "added few more components"
+ 1442  git push -u origin main
+ 1443  cd ..
+ 1444  cd portfolio_backend
+ 1445  ls
+ 1446  code .
+ 1447  ls
+ 1448  npm install jsonwebtoken
+ 1449  ls
+ 1450  npm install jsonwebtoken
+ 1451  sudo npm install jsonwebtoken
+ 1452  cd ..
+ 1453  cd Backend_webDevelopment
+ 1454  ls
+ 1455  cd ..
+ 1456  cd Backend_webDevelopment/Backend/project/src/models
+ 1457  ls
+ 1458  code user.models.js
+ 1459  cd ..
+ 1460  ls
+ 1461  cd ..
+ 1462  ls
+ 1463  ls -la
+ 1464  code .env
+ 1465  cd .
+ 1466  cd ..
+ 1467  cd portfolio_backend
+ 1468  ls
+ 1469  sudo npm run dev
+ 1470  git add .
+ 1471  git commit -m "added Authentication"
+ 1472  git push -u origin main
+ 1473  npm i bcrypt
+ 1474  sudo npm i bcrypt
+ 1475  sudo npm run dev
+ 1476  git add .
+ 1477  git commit -m "added Authentication"
+ 1478  git push -u origin main
+ 1479  cd Desktop
+ 1480  cd React-Redux-Applicatino
+ 1481  ls
+ 1482  cd mantine-project
+ 1483  ls
+ 1484  code .
+ 1485  sudo npm run dev
+ 1486  ls
+ 1487  cd mantine-project
+ 1488  sudo npm run dev
+ 1489  code .
+ 1490  cd ..
+ 1491  cd portfolio
+ 1492  ls
+ 1493  code .
+ 1494  sudo npm run dev
+ 1495  cd ..
+ 1496  cd AWS
+ 1497  ls
+ 1498  cd terraform-aws-application
+ 1499  ls
+ 1500  cd
+ 1501  cd Desktop
+ 1502  ls
+ 1503  cd ic-project
+ 1504  ls
+ 1505  cd hello
+ 1506  code .
+ 1507  cd ..
+ 1508  cd aws
+ 1509  cd terraform-aws-application
+ 1510  ls
+ 1511  code .
+ 1512  history
+ 1513  cd
+ 1514  cd Desktop/AWS
+ 1515  ls
+ 1516  cd terraform-aws-application
+ 1517  terraform init
+ 1518  terraform plan
+ 1519  terraform deploy
+ 1520  terraform -help
+ 1521  terraform apply
+ 1522  terraform output
+ 1523  terraform console
+ 1524  terraform init
+ 1525  terraform plan
+ 1526  terraform apply
+ 1527  terraform output
+ 1528  terraform init
+ 1529  terraform plan
+ 1530  terraform output
+ 1531  terraform apply
+ 1532  ssh -i Main-SSH-Dev.pem ec2-user@54.152.220.109
+ 1533  cd ..
+ 1534  ssh -i Main-SSH-Dev.pem ec2-user@54.152.220.109
+ 1535  terraform init
+ 1536  terraform plan
+ 1537  terraform apply
+ 1538  terraform init
+ 1539  terraform plan
+ 1540  terraform init\n
+ 1541  terraform plan
+ 1542  terraform init\n
+ 1543  terraform plan
+ 1544  cd Desktop
+ 1545  ls
+ 1546  cd portfolio
+ 1547  ls
+ 1548  code .
+ 1549  cd ..
+ 1550  cd portfolio_backend
+ 1551  ls
+ 1552  code .
+ 1553  sudo npm run dev
+ 1554  history
+ 1555  git add .
+ 1556  git commit -m "added userlogin functionality"
+ 1557  git push -u origin main
+ 1558  code .
+ 1559  cd ..
+ 1560  cd ic-project
+ 1561  ls
+ 1562  code ./
+ 1563  cd hello
+ 1564  dfx new identity pradeep
+ 1565  ls
+ 1566  dfx new identity pradeep
+ 1567  dfx identity new pradeep
+ 1568  dfx identity new pradeepsahu
+ 1569  dfx identity new get-wallet
+ 1570  dfx identity new --help
+ 1571  dfs cycles balance --network ic
+ 1572  dfs cycles balance --network pradeepsahu
+ 1573  dfx identity new ic
+ 1574  dfs cycles balance --network ic
+ 1575  dfx cycles balance --network ic
+ 1576  dfx identity new ic
+ 1577  dfs cycles balance --network ic
+ 1578  dfx cycles balance --network ic
+ 1579  dfx identity new --identity icp
+ 1580  dfx identity new  icp
+ 1581  dfx cycles balance --network icp
+ 1582  dfx identity new --help
+ 1583  dfx cycles balance --network ic
+ 1584  dfx identity new ic
+ 1585  dfx --identity new ic
+ 1586  dfx identity new pradeep
+ 1587  dfx identity list
+ 1588  dfx identity use pradeep
+ 1589  dfx cycles balance --network pradeep
+ 1590  dfx cycles balance --network ic
+ 1591  cd ..
+ 1592  dfx new IPC-Hackathon
+ 1593  cd IPC-Hackathon
+ 1594  ls -la
+ 1595  sudo rm -r .git
+ 1596  ls
+ 1597  git add .
+ 1598  git init
+ 1599  git add .
+ 1600  git commit -m "Project initialized"
+ 1601  git remote add origin https://github.com/PradeepSahhu/ICP-Hackathon.git
+ 1602  git push -u add origin
+ 1603  git branch -M main
+ 1604  git push -u main origin
+ 1605  git push -u origin main
+ 1606  code .
+ 1607  dfx start
+ 1608  dfx deploy
+ 1609  cd src
+ 1610  cd IPC-Hackathon-frontend
+ 1611  npm install tailwindcss @tailwindcss/vite
+ 1612  ls
+ 1613  npm install tailwindcss @tailwindcss/vite
+ 1614  sudo npm install tailwindcss @tailwindcss/vite
+ 1615  npm install tailwindcss @tailwindcss/vite
+ 1616  npm install vite@latest\n
+ 1617  npm install tailwindcss @tailwindcss/vite
+ 1618  dfx deploy
+ 1619  npm install tailwindcss @tailwindcss/vite
+ 1620  npm install vite\n
+ 1621  npm start
+ 1622  cd ..
+ 1623  cd
+ 1624  cd Desktop
+ 1625  ls
+ 1626  cd IPC-Hackathon
+ 1627  ls
+ 1628  cd src
+ 1629  ls
+ 1630  npx create-next-app@latest
+ 1631  cd ipc-hackathon-frontend
+ 1632  l
+ 1633  ls
+ 1634  sudo rm -r .git
+ 1635  ls
+ 1636  ls -la
+ 1637  cd ..
+ 1638  dfx deploy
+ 1639  cd ..
+ 1640  sudo rm -r IPC-Hackathon
+ 1641  cd ..
+ 1642  dfx new Yogdaan
+ 1643  cd Yogdaan
+ 1644  ls
+ 1645  code .
+ 1646  cd src
+ 1647  ls
+ 1648  cd Yogdaan_frontend
+ 1649  ls
+ 1650  cd src
+ 1651  ls
+ 1652  npm install tailwindcss @tailwindcss/vite
+ 1653  cd ..
+ 1654  npm install tailwindcss @tailwindcss/vite
+ 1655  pwd
+ 1656  sudo rm -r .git
+ 1657  cd src
+ 1658  ls
+ 1659  cd Yogdaan_frontend
+ 1660  ls
+ 1661  npm install tailwindcss @tailwindcss/vite
+ 1662  npm install vite
+ 1663  npm install tailwindcss @tailwindcss/vite
+ 1664  dfx start
+ 1665  npm start
+ 1666  dfx deploy
+ 1667  npm start
+ 1668  cd ..
+ 1669  npm i vite
+ 1670* npm run dev
+ 1671* npm start
+ 1672  npm install tailwindcss @tailwindcss/vite
+ 1673  npm install tailwindcss @tailwindcss/postcss postcss
+ 1674  npm install -D tailwindcss postcss autoprefixer\n
+ 1675  npx tailwindcss init -p\n
+ 1676  npm install -D tailwindcss postcss autoprefixer\n
+ 1677  npx tailwindcss init -p\n
+ 1678  npm install tailwindcss @tailwindcss/vite
+ 1679  npm run dev
+ 1680  cd ..
+ 1681  ls
+ 1682  pwd
+ 1683  git add 
+ 1684  ls -la
+ 1685  git add .
+ 1686  git init
+ 1687  git add .
+ 1688  git commit -m "initialized"
+ 1689  git branch -M main
+ 1690  git remote add origin https://github.com/PradeepSahhu/ICP-Hackathon.git
+ 1691  git push -u origin main --force
+ 1692  cd src
+ 1693  cd Yogdaan_frontend
+ 1694  npm install -D @types/node\n
+ 1695  npx shadcn@latest init\n
+ 1696  npx shadcn@latest add button\n
+ 1697* npm start
+ 1698  cd ..
+ 1699  git add .
+ 1700  git commit -m "added shadcn"
+ 1701  git push -u origin main
+ 1702* cd ic-project
+ 1703* ls
+ 1704* cd hello
+ 1705* ls
+ 1706* code .
+ 1707  dfx identity get-principal
+ 1708  OWNER_PUBLIC_KEY="principal \"$(dfx identity get-principal)\""\n
+ 1709  echo $OWNER_PUBLIC_KEY
+ 1710  dfx deploy
+ 1711  dfx canister call token balanceOf "( $OWNER_PUBLIC_KEY )"
+ 1712* OWNER_PUBLIC_KEY="principal \"$(dfx identity get-principal)\""\n
+ 1713  dfx canister call DYogdaan  balanceOf "( $OWNER_PUBLIC_KEY )"
+ 1714  dfx canister call token balanceOf "( $OWNER_PUBLIC_KEY )"
+ 1715  OWNER_PUBLIC_KEY="principal \"$(dfx identity get-principal)\""\n
+ 1716  dfx canister call DYogdaan balanceOf "( $OWNER_PUBLIC_KEY )"
+ 1717  OWNER_PUBLIC_KEY="principal \"$(dfx identity get-principal)\""\n
+ 1718  dfx deploy
+ 1719  dfx canister call DYogdaan balanceOf "( $OWNER_PUBLIC_KEY )"
+ 1720  dfx identity get-principal
+ 1721  dfx deploy
+ 1722  git push -u origin main
+ 1723  git pull .
+ 1724  git pull origin main
+ 1725  git push -u origin main
+ 1726  git add .
+ 1727  cd ..
+ 1728  cd Yogdaan
+ 1729  cd src
+ 1730  ls
+ 1731  cd script
+ 1732  ls
+ 1733  sudo 774 token.sh
+ 1734  ./token.sh
+ 1735  sudo chmod 774 token.sh
+ 1736  ./token.sh
+ 1737* cd src
+ 1738* ls
+ 1739* cd script
+ 1740* ./token.sh
+ 1741* cd ..
+ 1742* cd  Yogdaan_backend
+ 1743* dfx deploy
+ 1744* npm deploy
+ 1745* dfx deploy
+ 1746* cd ..
+ 1747* dfx deploy
+ 1748* ls
+ 1749* git pull origin main
+ 1750* dfx deploy
+ 1751* dfx start
+ 1752* dfx deploy
+ 1753* cd src/Yogdaan_frontend
+ 1754* sudo npm i
+ 1755* cd ..
+ 1756* dfx deploy
+ 1757* git add .
+ 1758* git pull origin main
+ 1759* dfx deploy
+ 1760* git commit -m "added the date types"
+ 1761* git push -u origin main
+ 1762* git pull origin main
+ 1763* dfx deploy
+ 1764  cd ..
+ 1765  cd
+ 1766  cd Desktop
+ 1767  cd Yogdaan
+ 1768  cd src
+ 1769  cd Yogdaan_frontend
+ 1770  sudo npm i
+ 1771  cd ..
+ 1772* dfx deploy
+ 1773* git add .
+ 1774* git commit -m "added the functionality"
+ 1775* git push -u origin main
+ 1776* git pull .
+ 1777* git push -u origin main
+ 1778* git pull origin main
+ 1779* git push -u origin main
+ 1780* git pull origin main
+ 1781* git pull .
+ 1782* git pull origin main
+ 1783* git pull .
+ 1784* git pull origin main
+ 1785* git add .
+ 1786* git commit -m "no changed"
+ 1787* git push -u origin main
+ 1788* git pull origin main
+ 1789* git push -u origin main
+ 1790* git add .
+ 1791* git commit -m "fixed"
+ 1792* git push -u origin main
+ 1793* dfx deploy
+ 1794* git add .
+ 1795* git commit -m "completed"
+ 1796* git push -u origin main
+ 1797  dfx identity get-principal
+ 1798* git add .
+ 1799* git commit -m "some more improvements"
+ 1800* git push -u origin main
+ 1801* git pull .
+ 1802* git pull origin main
+ 1803* git add .
+ 1804* git push -u origin main
+ 1805* dfx deploy
+ 1806  git pull origin main
+ 1807  git add .
+ 1808  git commit -m "completed"
+ 1809  git push -u origin main
+ 1810  git pull origin main
+ 1811  git pull .
+ 1812  git pull origin main
+ 1813  git add .
+ 1814  git commit -m "added"
+ 1815  git push -u origin main
+ 1816  git pull origin main
+ 1817* cd src
+ 1818* ls
+ 1819* cd Yogdaan_
+ 1820* ls
+ 1821* cd Yogdaan_frontend
+ 1822* ls
+ 1823* npm start
+ 1824* sudo npm i
+ 1825* npm start
+ 1826  dfx deploy
+ 1827  cd src/Yogdaan_frontend
+ 1828  ls
+ 1829  npm install @radix-ui/react-tabs @radix-ui/react-tooltip\nnpm install class-variance-authority clsx tailwind-merge\n
+ 1830  npm install lucide-react\n
+ 1831  npm install recharts\n
+ 1832  npx shadcn-ui@latest add avatar\n
+ 1833  npx shadcn@latest add avatar\n
+ 1834  cd ..
+ 1835  git add .
+ 1836  git push -u origin main
+ 1837  git status
+ 1838  git add .
+ 1839  git commit -m "changes"
+ 1840  git push -u origin main
+ 1841* npm start
+ 1842  dfx deploy
+ 1843  git add .
+ 1844  git commit -m "completed frontend"
+ 1845  git push -u origin main
+ 1846* npm start
+ 1847  cd src
+ 1848  ls
+ 1849  cd Yogdaan_backend
+ 1850  ls
+ 1851  cd ..
+ 1852  cd Yogdaan_frontend
+ 1853  ls
+ 1854  sudo npm i
+ 1855  npm start
+ 1856  cd ..
+ 1857  dfx deploy
+ 1858  dfx identity list
+ 1859  dfx cycles balance --ic
+ 1860  dfx cycles --network ic redeem-faucet-coupon 8C3EE-E4BCE-34489
+ 1861  dfx cycles balance --ic
+ 1862  dfx deploy --ic

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Yogdaan_backend } from "../../../declarations/Yogdaan_backend";
 
 const NGOForm = () => {
   const [name, setName] = useState("");
@@ -8,6 +9,15 @@ const NGOForm = () => {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
+  const createNewNGO = async (e) => {
+    e.preventDefault();
+    try {
+      const res = Yogdaan_backend.createNGO(name, description, location);
+    } catch (error) {
+      console.log(console.error());
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -15,14 +25,12 @@ const NGOForm = () => {
     setError(null);
 
     try {
-      setTimeout(() => {
-        if (name && description && location) {
-          setResult({ id: Math.floor(Math.random() * 1000) });
-        } else {
-          setError({ message: "All fields are required" });
-        }
-        setIsSubmitting(false);
-      }, 1000);
+      if (name && description && location) {
+        setResult({ id: Math.floor(Math.random() * 1000) });
+      } else {
+        setError({ message: "All fields are required" });
+      }
+      setIsSubmitting(false);
     } catch (err) {
       setError({ message: err.message || "An error occurred" });
       setIsSubmitting(false);
@@ -33,7 +41,7 @@ const NGOForm = () => {
     <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md my-20">
       <h1 className="text-2xl font-bold mb-6 text-gray-800">Create New NGO</h1>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form className="space-y-4">
         <div>
           <label
             htmlFor="name"
@@ -89,6 +97,7 @@ const NGOForm = () => {
           type="submit"
           disabled={isSubmitting}
           className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 transition-colors"
+          onClick={(e) => createNewNGO(e)}
         >
           {isSubmitting ? "Creating..." : "Create NGO"}
         </button>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+// import * as THREE from "three";
+// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import {
   Search,
   User,
@@ -17,7 +17,7 @@ import { Card, CardContent, CardHeader } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Badge } from "../components/ui/badge";
-
+import { Yogdaan_backend } from "../../../declarations/Yogdaan_backend";
 const YogdaanHomepage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const containerRef = useRef(null);
