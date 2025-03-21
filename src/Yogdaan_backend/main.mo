@@ -85,7 +85,7 @@ actor YogdaanDonationPlatform {
   private stable var nextNgoId : Nat = 1;
   private stable var nextCampaignId : Nat = 1;
   private stable var nextDonationId : Nat = 1;
-  private stable var adminPrincipal : Principal = Principal.fromText("aaaaa-aa"); // Replace with actual admin principal
+  private stable var adminPrincipal : Principal = Principal.fromText("amxgf-26ss5-uvqvy-istfd-l2tcl-x6lli-2m3ex-eylgq-x5xow-yzybp-iae");
 
   private var ngos = HashMap.HashMap<Nat, NGO>(10, Nat.equal, Int.hash);
   private var campaigns = HashMap.HashMap<Nat, Campaign>(10, Nat.equal, Int.hash);
