@@ -2,6 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { Search, User, Award, TrendingUp, BarChart2, Menu, X, ExternalLink, ArrowRight, Heart } from 'lucide-react';
+import { Card, CardContent, CardHeader } from '../components/ui/card';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Badge } from '../components/ui/badge';
 
 const YogdaanHomepage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,11 +29,10 @@ const YogdaanHomepage = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     
-    // Create a sphere geometry for the globe effect
+    // Create a sphere geometry for the globe effect - changed to black
     const sphereGeometry = new THREE.SphereGeometry(3, 64, 64);
-    // Changed to amber color
     const sphereMaterial = new THREE.MeshBasicMaterial({
-      color: 0xf59e0b,
+      color: 0x000000,
       wireframe: true,
       transparent: true,
       opacity: 0.3
@@ -38,7 +41,7 @@ const YogdaanHomepage = () => {
     const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
     scene.add(sphere);
     
-    // Add particle effects
+    // Add particle effects - changed to grey
     const particlesGeometry = new THREE.BufferGeometry();
     const particlesCount = 2000;
     
@@ -48,10 +51,9 @@ const YogdaanHomepage = () => {
     }
     
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-    // Changed to orange color
     const particlesMaterial = new THREE.PointsMaterial({
       size: 0.02,
-      color: 0xea580c
+      color: 0x505050
     });
     
     const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
@@ -110,24 +112,6 @@ const YogdaanHomepage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const Button = ({ children, className, variant = "primary", icon }) => {
-    const baseClasses = "rounded-full font-medium transition-all duration-300 shadow-lg flex items-center justify-center";
-    
-    const variants = {
-      // Changed to amber-orange gradient
-      primary: "bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white",
-      outline: "border-2 border-amber-500 text-amber-500 hover:bg-amber-500/10",
-      secondary: "bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border border-white/20"
-    };
-    
-    return (
-      <button className={`${baseClasses} ${variants[variant]} ${className}`}>
-        {children}
-        {icon && <span className="ml-2">{icon}</span>}
-      </button>
-    );
-  };
-
   const impactStats = [
     { value: "$2.4M", label: "Total Donations" },
     { value: "40+", label: "Verified NGOs" },
@@ -163,117 +147,121 @@ const YogdaanHomepage = () => {
   ];
 
   return (
-    <div ref={containerRef} className="relative min-h-screen bg-gradient-to-b from-gray-900 via-amber-900/20 to-slate-900 text-white overflow-hidden">
+    <div ref={containerRef} className="relative min-h-screen bg-white text-black overflow-hidden">
       {/* 3D Background */}
       <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10" />
       
       {/* Overlay gradient for better text visibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-transparent to-slate-900/80 -z-5"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/80 -z-5"></div>
       
       {/* Navigation */}
-      <header className="relative z-10">
+      <header className="relative z-10 border-b">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             {/* Logo */}
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
               <Heart className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Yogdaan</span>
+            <span className="text-xl font-bold text-black">Yogdaan</span>
           </div>
           
           {/* Desktop Navigation - centered */}
           <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-            <a href="/ngo-rankings" className="text-gray-300 hover:text-amber-400 transition-colors flex items-center group">
+            <a href="/ngo-rankings" className="text-gray-600 hover:text-black transition-colors flex items-center group">
               <Award className="mr-1" size={16} />
               <span>NGOs Rankings</span>
-              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-amber-400 mt-0.5"></span>
+              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black mt-0.5"></span>
             </a>
-            <a href="/trading" className="text-gray-300 hover:text-amber-400 transition-colors flex items-center group">
+            <a href="/trading" className="text-gray-600 hover:text-black transition-colors flex items-center group">
               <TrendingUp className="mr-1" size={16} />
               <span>Investment</span>
-              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-amber-400 mt-0.5"></span>
+              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black mt-0.5"></span>
             </a>
-            <a href="/compaign" className="text-gray-300 hover:text-amber-400 transition-colors flex items-center group">
+            <a href="/compaign" className="text-gray-600 hover:text-black transition-colors flex items-center group">
               <BarChart2 className="mr-1" size={16} />
               <span>Campaign</span>
-              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-amber-400 mt-0.5"></span>
+              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black mt-0.5"></span>
             </a>
           </div>
           
           {/* Search and Profile - right aligned */}
           <div className="hidden md:flex items-center space-x-4">
             <div className="relative">
-              <input
+              <Input
                 type="text"
                 placeholder="Search NGOs..."
-                className="pl-10 pr-4 py-2 rounded-full bg-white/5 border border-white/10 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 focus:outline-none text-white w-48 transition-all duration-300 focus:w-64"
+                className="pl-10 pr-4 py-2 w-48 transition-all duration-300 focus:w-64"
               />
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
             </div>
             <div className="relative">
-              <button 
-                className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-amber-400 hover:border-amber-500/50 transition-all cursor-pointer"
+              <Button 
+                variant="outline"
+                className="w-10 h-10 rounded-full p-0"
                 onClick={() => setShowProfileMenu(!showProfileMenu)}
               >
                 <User size={18} />
-              </button>
+              </Button>
               
               {/* Profile dropdown menu */}
               {showProfileMenu && (
-                <div className="absolute right-0 mt-2 w-48 rounded-xl bg-slate-800/95 backdrop-blur-md p-2 border border-white/10 shadow-lg z-50">
-                  <div className="py-2 px-4 border-b border-white/10">
-                    <div className="font-medium text-white">Guest User</div>
-                    <div className="text-xs text-gray-400">guest@example.com</div>
-                  </div>
-                  <div className="py-1">
-                    <a href="/user-profile" className="block px-4 py-2 text-sm text-gray-300 hover:bg-amber-500/20 rounded-lg">Profile</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-amber-500/20 rounded-lg">My Donations</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-amber-500/20 rounded-lg">Watchlist</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-amber-500/20 rounded-lg">Holdings</a>
-                  </div>
-                  <div className="py-1 border-t border-white/10">
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-amber-500/20 rounded-lg">Settings</a>
-                    <a href="#" className="block px-4 py-2 text-sm text-gray-300 hover:bg-amber-500/20 rounded-lg">Log Out</a>
-                  </div>
-                </div>
+                <Card className="absolute right-0 mt-2 w-48 z-50">
+                  <CardHeader className="py-2 px-4 border-b">
+                    <div className="font-medium">Guest User</div>
+                    <div className="text-xs text-gray-500">guest@example.com</div>
+                  </CardHeader>
+                  <CardContent className="p-0">
+                    <div className="py-1">
+                      <a href="/user-profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Profile</a>
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg">My Donations</a>
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Watchlist</a>
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Holdings</a>
+                    </div>
+                    <div className="py-1 border-t">
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Settings</a>
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg">Log Out</a>
+                    </div>
+                  </CardContent>
+                </Card>
               )}
             </div>
           </div>
           
           {/* Mobile menu button */}
-          <button 
-            className="md:hidden text-white focus:outline-none"
+          <Button 
+            variant="ghost"
+            className="md:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </Button>
         </nav>
         
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 inset-x-0 bg-slate-800/95 backdrop-blur-md p-4 z-50 border-b border-white/10">
+          <div className="md:hidden absolute top-16 inset-x-0 bg-white p-4 z-50 border-b shadow-md">
             <div className="flex flex-col space-y-4 p-2">
               <div className="relative mb-4">
-                <input
+                <Input
                   type="text"
                   placeholder="Search NGOs..."
-                  className="pl-10 pr-4 py-2 rounded-full bg-white/5 border border-white/10 focus:border-amber-500 focus:outline-none text-white w-full"
+                  className="pl-10 pr-4 py-2 w-full"
                 />
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
               </div>
-              <a href="#" className="text-gray-300 hover:text-amber-400 transition-colors py-2 flex items-center">
+              <a href="#" className="text-gray-700 hover:text-black transition-colors py-2 flex items-center">
                 <Award className="mr-2" size={18} />
                 NGOs Rankings
               </a>
-              <a href="#" className="text-gray-300 hover:text-amber-400 transition-colors py-2 flex items-center">
+              <a href="#" className="text-gray-700 hover:text-black transition-colors py-2 flex items-center">
                 <TrendingUp className="mr-2" size={18} />
                 Trade
               </a>
-              <a href="#" className="text-gray-300 hover:text-amber-400 transition-colors py-2 flex items-center">
+              <a href="#" className="text-gray-700 hover:text-black transition-colors py-2 flex items-center">
                 <BarChart2 className="mr-2" size={18} />
                 Campaign
               </a>
-              <a href="#" className="text-gray-300 hover:text-amber-400 transition-colors py-2 flex items-center">
+              <a href="#" className="text-gray-700 hover:text-black transition-colors py-2 flex items-center">
                 <User className="mr-2" size={18} />
                 Profile
               </a>
@@ -286,60 +274,63 @@ const YogdaanHomepage = () => {
       <section className="relative z-0 pt-20 pb-16 md:py-32 flex items-center min-h-screen">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-block px-3 py-1 mb-6 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm font-medium text-amber-300">
+            <Badge variant="outline" className="mb-6 px-3 py-1">
               Blockchain Powered Donations
-            </div>
+            </Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Donate with</span>
+              <span className="text-black">Donate with</span>
               <br />
-              <span className="text-white">Complete Control</span>
+              <span className="text-black">Complete Control</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
               Your donations, your decision. Approve how NGOs spend your funds and be part of the change you want to see.
             </p>
             
             {/* Two main centered buttons */}
             <div className="flex flex-col sm:flex-row justify-center space-y-6 sm:space-y-0 sm:space-x-8">
-              <Button className="px-12 py-5 text-lg sm:w-48 group relative overflow-hidden">
-                <span className="relative z-10">Donate Now</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-amber-500/50 to-orange-600/50 opacity-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-500 rounded-full"></span>
+              <Button size="lg" className="px-12 py-5 text-lg sm:w-48 bg-black text-white hover:bg-gray-800">
+                Donate Now
               </Button>
-              <Button variant="outline" className="px-12 py-5 text-lg sm:w-48 group">
+              <Button variant="outline" size="lg" className="px-12 py-5 text-lg sm:w-48 group">
                 <span>Explore NGOs</span>
-                <ArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
             
             {/* Feature carousel */}
-            <div className="mt-12 p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 max-w-2xl mx-auto overflow-hidden">
-              <div className="mb-4 flex justify-center space-x-2">
-                {features.map((_, index) => (
-                  <button 
-                    key={index} 
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${index === activeFeature ? 'bg-amber-500 w-8' : 'bg-gray-600'}`}
-                    onClick={() => setActiveFeature(index)}
-                  />
-                ))}
-              </div>
-              <div className="transition-all duration-500 ease-in-out">
-                <div className="text-xl font-semibold text-white mb-2">
-                  {features[activeFeature].title}
+            <Card className="mt-12 max-w-2xl mx-auto">
+              <CardContent className="p-6">
+                <div className="mb-4 flex justify-center space-x-2">
+                  {features.map((_, index) => (
+                    <button 
+                      key={index} 
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${index === activeFeature ? 'bg-black w-8' : 'bg-gray-300'}`}
+                      onClick={() => setActiveFeature(index)}
+                    />
+                  ))}
                 </div>
-                <p className="text-gray-300">
-                  {features[activeFeature].description}
-                </p>
-              </div>
-            </div>
+                <div className="transition-all duration-500 ease-in-out">
+                  <div className="text-xl font-semibold text-black mb-2">
+                    {features[activeFeature].title}
+                  </div>
+                  <p className="text-gray-600">
+                    {features[activeFeature].description}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
             
             {/* Stats under the buttons */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12">
               {impactStats.map((stat, index) => (
-                <div key={index} className="p-4 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 hover:border-amber-500/30 hover:transform hover:scale-105 transition-all duration-300">
-                  <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-gray-400 text-sm">{stat.label}</div>
-                </div>
+                <Card key={index} className="hover:shadow-md transition-all duration-300">
+                  <CardContent className="p-4">
+                    <div className="text-2xl md:text-3xl font-bold text-black mb-1">
+                      {stat.value}
+                    </div>
+                    <div className="text-gray-500 text-sm">{stat.label}</div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
@@ -349,22 +340,22 @@ const YogdaanHomepage = () => {
         <div className="absolute bottom-24 left-0 right-0">
           <div className="container mx-auto px-6">
             <div className="text-center mb-8">
-              <h2 className="text-xl font-semibold text-white">Top Ranked NGOs</h2>
-              <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-2"></div>
+              <h2 className="text-xl font-semibold text-black">Top Ranked NGOs</h2>
+              <div className="w-16 h-1 bg-black mx-auto mt-2"></div>
             </div>
             
             <div className="flex justify-center space-x-4 md:space-x-8 overflow-x-auto pb-4 no-scrollbar">
               {FeaturedNGOs.map((ngo, index) => (
                 <div key={index} className="text-center group">
                   <div className="relative">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-3xl group-hover:bg-gradient-to-r from-amber-500/20 to-orange-500/20 transition-all duration-300 group-hover:border-amber-500/50">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center text-3xl group-hover:bg-gray-200 transition-all duration-300 group-hover:border-black">
                       {ngo.logo}
                     </div>
-                    <div className="absolute -bottom-2 -right-2 w-6 h-6 rounded-full bg-gradient-to-r from-amber-600 to-orange-600 flex items-center justify-center text-white text-xs font-bold">
+                    <div className="absolute -bottom-2 -right-2 w-6 h-6 rounded-full bg-black flex items-center justify-center text-white text-xs font-bold">
                       {ngo.rank}
                     </div>
                   </div>
-                  <div className="mt-2 text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="mt-2 text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {ngo.name}
                   </div>
                 </div>
@@ -372,37 +363,33 @@ const YogdaanHomepage = () => {
             </div>
             
             <div className="text-center mt-4">
-              <a href="#" className="text-amber-400 hover:text-amber-300 text-sm flex items-center justify-center">
+              <a href="#" className="text-black hover:underline text-sm flex items-center justify-center">
                 View All Rankings <ExternalLink size={14} className="ml-1" />
               </a>
             </div>
           </div>
         </div>
-        
-        {/* Decorative elements */}
-        <div className="absolute bottom-10 left-10 w-32 h-32 bg-amber-500/20 rounded-full blur-3xl opacity-70"></div>
-        <div className="absolute top-1/4 right-10 w-24 h-24 bg-orange-500/20 rounded-full blur-2xl opacity-70"></div>
       </section>
       
       {/* Footer */}
-      <footer className="relative z-0 bg-slate-900/80 backdrop-blur-lg border-t border-white/5 py-6">
+      <footer className="relative z-0 bg-gray-50 border-t py-6">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-amber-600 to-orange-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center">
                 <Heart className="w-4 h-4 text-white" />
               </div>
-              <span className="text-sm font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Yogdaan</span>
+              <span className="text-sm font-bold text-black">Yogdaan</span>
             </div>
             
             <div className="text-gray-500 text-sm">© 2025 Yogdaan | Your donations, your decisions</div>
             
             <div className="flex items-center space-x-4 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors text-xs">Privacy</a>
-              <span className="text-gray-600">|</span>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors text-xs">Terms</a>
-              <span className="text-gray-600">|</span>
-              <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors text-xs">Contact</a>
+              <a href="#" className="text-gray-500 hover:text-black transition-colors text-xs">Privacy</a>
+              <span className="text-gray-400">|</span>
+              <a href="#" className="text-gray-500 hover:text-black transition-colors text-xs">Terms</a>
+              <span className="text-gray-400">|</span>
+              <a href="#" className="text-gray-500 hover:text-black transition-colors text-xs">Contact</a>
             </div>
           </div>
         </div>
