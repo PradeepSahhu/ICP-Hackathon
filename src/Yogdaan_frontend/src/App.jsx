@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Yogdaan_backend } from "declarations/Yogdaan_backend";
+import { Button } from "./components/ui/button.jsx";
 
 function App() {
   const [greeting, setGreeting] = useState("");
@@ -24,6 +25,8 @@ function App() {
         <button type="submit">Click Me!</button>
       </form>
       <section id="greeting">{greeting}</section>
+
+      <Button>Click here</Button>
     </main>
   );
 }
