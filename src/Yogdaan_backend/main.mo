@@ -227,9 +227,6 @@ actor YogdaanDonationPlatform {
     startDate : Int,
     endDate : Int,
   ) : async Result.Result<Nat, Error> {
-    if (not isAdmin(caller) and not isNgoOwner(ngoId, caller)) {
-
-    };
 
     switch (ngos.get(ngoId)) {
       case (null) { return #err(#NotFound) };

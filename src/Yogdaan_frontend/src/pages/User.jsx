@@ -187,7 +187,7 @@ const UserProfile = () => {
           <div className="flex flex-wrap gap-4">
             <Card className="bg-gray-900 border-gray-800">
               <CardContent className="p-4 flex items-center gap-2">
-                <DollarSign className="text-green-400" size={20} />
+                YFM
                 <div>
                   <p className="text-sm text-gray-400">Total Donated</p>
                   <p className="text-xl font-bold">
@@ -220,8 +220,8 @@ const UserProfile = () => {
         </div>
 
         {/* Main Content */}
-        <Tabs defaultValue="holdings" className="w-full">
-          <TabsList className="bg-gray-900 border-b border-gray-800 w-full justify-start mb-6">
+        <Tabs defaultValue="holdings" className="w-full text-white">
+          <TabsList className="bg-gray-900 border-b border-gray-800 w-full justify-start mb-6 text-white">
             <TabsTrigger value="holdings" className="px-4 py-2">
               Holdings
             </TabsTrigger>
@@ -242,20 +242,22 @@ const UserProfile = () => {
           </TabsList>
 
           {/* Holdings Tab */}
-          <TabsContent value="holdings" className="space-y-6">
+          <TabsContent value="holdings" className="space-y-6 text-white">
             <Card className="bg-gray-900 border-gray-800">
               <CardHeader>
                 <CardTitle className="text-xl">Current Holdings</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
+                <div className="space-y-4 text-white">
                   {holdingsData.map((holding) => (
                     <div
                       key={holding.ngoId}
-                      className="p-4 border border-gray-800 rounded-lg flex justify-between items-center"
+                      className="p-4 border border-gray-800 rounded-lg flex justify-between items-center text-white"
                     >
-                      <div>
-                        <h3 className="font-medium">{holding.ngoName}</h3>
+                      <div className="text-white">
+                        <h3 className="font-medium text-white">
+                          {holding.ngoName}
+                        </h3>
                         <div className="flex items-center text-sm text-gray-400 mt-1">
                           <span>{holding.campaignCount} campaigns</span>
                         </div>
@@ -411,7 +413,7 @@ const UserProfile = () => {
                         <div className="flex justify-between items-start">
                           <div>
                             <div className="flex items-center gap-2">
-                              <Badge className="bg-yellow-500 text-black">
+                              <Badge className="bg-yellow-500 text-white">
                                 Pending
                               </Badge>
                               <h3 className="font-medium">
