@@ -4,7 +4,7 @@ Welcome to your new `Yogdaan` project and to the Internet Computer development c
 
 To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
 
-To learn more before you start working with `Yogdaan`, see the following documentation available online:
+To learn more before you start working with `Yogdaan`, see the following documentations available online:
 
 - [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
 - [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
