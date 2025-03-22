@@ -97,7 +97,7 @@ const NgoRankingsPage = () => {
 
   const getTheNGORankings = async () => {
     const data = await Yogdaan_backend.getTopNGOs(10);
-    setTopNgo(data[0]);
+    setTopNgo(data);
 
     // console.table([data]);
 
@@ -151,7 +151,7 @@ const NgoRankingsPage = () => {
 
           <div className="flex justify-center space-x-12 mb-16">
             {topNgo &&
-              topNgos.map((ngo) => (
+              topNgo.map((ngo) => (
                 <div
                   key={parseInt(Number(ngo.id))}
                   className="flex flex-col items-center"
@@ -262,7 +262,7 @@ const NgoRankingsPage = () => {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {allNgos &
+                {allNgos &&
                   allNgos.map((ngo) => (
                     <TableRow
                       key={parseInt(Number(ngo.id))}
